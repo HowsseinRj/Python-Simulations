@@ -1,3 +1,4 @@
+![GitHub Banner](./github-banner.png)
 # 🐍 Python Simulations by Hossein Rajabloo
 
 This repository includes a collection of Python-based scripts and mini-projects focused on:
