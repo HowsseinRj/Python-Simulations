@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Engine Efficiency Visualizer",
+    "description": "Plots engine efficiency curves based on input load data."
+  },
+  {
+    "title": "Fuel Efficiency Predictor (GUI)",
+    "description": "Tkinter app for predicting MPG using machine learning."
+  },
+  {
+    "title": "Pipe Heat Loss Simulator",
+    "description": "Calculates thermal losses through pipelines using conduction equations."
+  }
+]
