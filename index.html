@@ -10,7 +10,8 @@
   <script src="https://unpkg.com/scrollreveal"></script>
   <style>
     body {
-      backdrop-filter: blur(10px);
+      background: linear-gradient(145deg, #e0e0e0, #f5f5f5);
+      background-attachment: fixed;
     }
     .glass {
       background: rgba(255, 255, 255, 0.2);
@@ -22,10 +23,13 @@
     .transition-all {
       transition: all 0.4s ease-in-out;
     }
+    .dark body {
+      background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    }
   </style>
 </head>
 
-<body class="bg-gradient-to-tr from-slate-100 to-slate-300 dark:from-slate-900 dark:to-slate-800 text-gray-900 dark:text-gray-100 font-sans">
+<body class="text-gray-900 dark:text-gray-100 font-sans">
   <header class="p-6 glass m-6 shadow-lg">
     <div class="flex justify-between items-center">
       <h1 class="text-3xl font-bold">Hossein Rajabloo</h1>
@@ -39,7 +43,28 @@
   <main class="p-6 space-y-12">
     <section id="about" class="glass p-6">
       <h2 class="text-2xl font-semibold mb-2">About Me</h2>
-      <p>Mechanical Engineering Graduate | ISI Researcher | Python & AI Enthusiast | Instructor at Ministry of Education, Iran.</p>
+      <p>
+        I'm a Mechanical Engineering graduate from Mazandaran University of Science and Technology, currently working as a Vocational Automotive Instructor at the Ministry of Education, Iran.
+        My passion lies in energy systems, simulation, and artificial intelligence. I’ve authored ISI-indexed research in fuel cells and radiative cooling technologies. I also develop Python simulations for engineering education and machine learning applications.
+      </p>
+    </section>
+
+    <section id="resume" class="glass p-6">
+      <h2 class="text-2xl font-semibold mb-2">Resume Highlights</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>Education:</strong> B.Sc. in Mechanical Engineering (2012–2017), Mazandaran University of Science and Technology</li>
+        <li><strong>Current Role:</strong> Vocational Automotive Instructor – Ministry of Education (Since 2023)</li>
+        <li><strong>Previous Role:</strong> HVAC Instructor – Iran Technical & Vocational Training Organization (2017–2019)</li>
+        <li><strong>Research:</strong> 
+          <ul class="ml-4 list-disc">
+            <li>Paper: "Barriers and Strategies in Developing Fuel Cell Vehicles" – Civilica</li>
+            <li>Paper: "Biomimetic Radiative Cooling Film..." – Elsevier (Under Review)</li>
+          </ul>
+        </li>
+        <li><strong>Skills:</strong> Python, SolidWorks, ANSYS, CFD, ML (Scikit-learn), Teaching, Technical Writing</li>
+        <li><strong>Certifications:</strong> Technical Instructor Certifications – TVTO Iran</li>
+        <li><strong>Languages:</strong> Persian (Native), English (Fluent)</li>
+      </ul>
     </section>
 
     <section id="projects" class="glass p-6">
@@ -47,30 +72,17 @@
       <div class="grid md:grid-cols-2 gap-6">
         <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-all hover:scale-105">
           <h3 class="text-xl font-bold">Engine Efficiency Plot</h3>
-          <p>Plotting efficiency vs load with matplotlib – an educational simulation for mechanical systems.</p>
+          <p>Plotting mechanical engine efficiency vs load using Python/matplotlib.</p>
         </div>
         <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-all hover:scale-105">
-          <h3 class="text-xl font-bold">Fuel Efficiency Prediction (ML)</h3>
-          <p>Regression model predicting car fuel usage using linear & random forest techniques. GUI included.</p>
+          <h3 class="text-xl font-bold">Fuel Efficiency Prediction</h3>
+          <p>ML model + GUI to predict MPG using real-world specs and regression models.</p>
         </div>
         <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-all hover:scale-105">
           <h3 class="text-xl font-bold">Pipe Heat Loss</h3>
-          <p>Simulates thermal conduction and convection in pipe systems. Visualized with matplotlib.</p>
+          <p>Simulates heat loss through conduction/convection for engineering education.</p>
         </div>
       </div>
-    </section>
-
-    <section id="blog" class="glass p-6">
-      <h2 class="text-2xl font-semibold mb-4">Blog / Articles</h2>
-      <ul id="blog-list">
-        <li class="mb-2">👉 <a href="#">Overcoming Barriers in Fuel Cell Vehicle Development</a></li>
-        <li class="mb-2">👉 <a href="#">Radiative Cooling Inspired by Desert Snail Shell</a></li>
-      </ul>
-    </section>
-
-    <section id="cv" class="glass p-6">
-      <h2 class="text-2xl font-semibold mb-2">Resume</h2>
-      <a href="cv-hossein.pdf" class="underline text-blue-500 hover:text-blue-700">Download My CV (PDF)</a>
     </section>
 
     <section id="contact" class="glass p-6">
@@ -96,18 +108,17 @@
     }
 
     function switchLang() {
-      const allText = document.body.innerHTML;
-      if (document.body.dir === 'ltr') {
-        document.body.dir = 'rtl';
+      const langNow = document.documentElement.lang;
+      if (langNow === 'en') {
         document.documentElement.lang = 'fa';
-        document.body.innerHTML = allText.replace(/About Me/g, 'درباره من')
+        document.body.dir = 'rtl';
+        document.body.innerHTML = document.body.innerHTML.replace(/About Me/g, 'درباره من')
+          .replace(/Resume Highlights/g, 'رزومه')
           .replace(/Projects/g, 'پروژه‌ها')
-          .replace(/Blog \/ Articles/g, 'مقالات / نوشته‌ها')
-          .replace(/Resume/g, 'رزومه')
           .replace(/Contact Me/g, 'تماس با من')
-          .replace(/Download My CV \(PDF\)/g, 'دانلود رزومه من (PDF)');
+          .replace(/Made with ❤️ by Hossein Rajabloo/g, 'ساخته شده با ❤️ توسط حسین رجب لو');
       } else {
-        location.reload(); // simple toggle for now
+        location.reload();
       }
     }
   </script>
