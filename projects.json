@@ -4,7 +4,23 @@
     "description": "Plots engine efficiency based on load. Great for mechanical insight."
   },
   {
-    "title": "Fuel Efficiency ML",
-    "description": "Machine learning model for predicting fuel consumption from car specs."
+    "title": "Pipe Heat Loss Simulation",
+    "description": "Simulates conductive and convective heat loss in pipes."
+  },
+  {
+    "title": "Fuel Efficiency Prediction",
+    "description": "Predicts car MPG using simple linear regression based on features like horsepower and weight."
+  },
+  {
+    "title": "Fuel Efficiency ML (Advanced)",
+    "description": "Compares multiple ML models (Linear, Random Forest) on the Auto MPG dataset."
+  },
+  {
+    "title": "Fuel Predict GUI",
+    "description": "A desktop GUI app using Tkinter that predicts fuel efficiency with a trained model."
+  },
+  {
+    "title": "Model Training Script",
+    "description": "Trains and saves a fuel efficiency prediction model for later use in applications."
   }
 ]
