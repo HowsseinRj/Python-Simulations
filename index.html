@@ -1,181 +1,115 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hossein Rajabloo | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
   <style>
-    :root {
-      --bg-light: #f9f9f9;
-      --bg-dark: #0e0e0e;
-      --text-light: #111;
-      --text-dark: #eee;
-      --accent: #007bff;
-      font-family: 'Vazirmatn', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    [data-theme="light"] {
-      background-color: var(--bg-light);
-      color: var(--text-light);
-    }
-
-    [data-theme="dark"] {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-
     body {
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
+      backdrop-filter: blur(10px);
     }
-
-    header {
-      padding: 2rem;
-      text-align: center;
+    .glass {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
-
-    nav a {
-      margin: 0 1rem;
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 1rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-in-out;
-    }
-
-    section.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      opacity: 0.6;
-    }
-
-    #theme-toggle, #lang-toggle {
-      position: fixed;
-      top: 10px;
-      cursor: pointer;
-      background: none;
-      border: 2px solid var(--accent);
-      padding: 5px 10px;
-      color: var(--accent);
-      border-radius: 5px;
-    }
-    #theme-toggle {
-      right: 20px;
-    }
-    #lang-toggle {
-      right: 120px;
+    .transition-all {
+      transition: all 0.4s ease-in-out;
     }
   </style>
 </head>
 
-<body>
-  <button id="theme-toggle">Switch Theme</button>
-  <button id="lang-toggle">فارسی</button>
-
-  <header>
-    <h1 data-en="Hossein Rajabloo" data-fa="حسین رجب‌لو">Hossein Rajabloo</h1>
-    <p data-en="Engineer | Researcher | Developer" data-fa="مهندس | پژوهشگر | توسعه‌دهنده">Engineer | Researcher | Developer</p>
-    <nav>
-      <a href="#about" data-en="About" data-fa="درباره من">About</a>
-      <a href="#projects" data-en="Projects" data-fa="پروژه‌ها">Projects</a>
-      <a href="#blog" data-en="Blog" data-fa="بلاگ">Blog</a>
-      <a href="#cv" data-en="CV" data-fa="رزومه">CV</a>
-      <a href="#contact" data-en="Contact" data-fa="تماس با من">Contact</a>
-    </nav>
+<body class="bg-gradient-to-tr from-slate-100 to-slate-300 dark:from-slate-900 dark:to-slate-800 text-gray-900 dark:text-gray-100 font-sans">
+  <header class="p-6 glass m-6 shadow-lg">
+    <div class="flex justify-between items-center">
+      <h1 class="text-3xl font-bold">Hossein Rajabloo</h1>
+      <div>
+        <button onclick="switchLang()" class="px-4 py-1 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-all">FA / EN</button>
+        <button onclick="toggleTheme()" class="ml-2 px-3 py-1 bg-gray-700 text-white rounded-full hover:bg-gray-800 transition-all"><i class="fa fa-moon"></i></button>
+      </div>
+    </div>
   </header>
 
-  <section id="about">
-    <h2 data-en="About Me" data-fa="درباره من">About Me</h2>
-    <p data-en="B.Sc. in Mechanical Engineering | ISI Researcher | Fuel Cell & AI enthusiast | Teaching professional in Automotive Tech"
-       data-fa="کارشناسی مهندسی مکانیک | پژوهشگر ISI | علاقه‌مند به پیل سوختی و هوش مصنوعی | مدرس تخصصی مکانیک خودرو">
-      B.Sc. in Mechanical Engineering | ISI Researcher | Fuel Cell & AI enthusiast | Teaching professional in Automotive Tech
-    </p>
-  </section>
+  <main class="p-6 space-y-12">
+    <section id="about" class="glass p-6">
+      <h2 class="text-2xl font-semibold mb-2">About Me</h2>
+      <p>Mechanical Engineering Graduate | ISI Researcher | Python & AI Enthusiast | Instructor at Ministry of Education, Iran.</p>
+    </section>
 
-  <section id="projects">
-    <h2 data-en="Projects" data-fa="پروژه‌ها">Projects</h2>
-    <ul>
-      <li data-en="Engine Efficiency Plot – Simulation of mechanical performance"
-          data-fa="نمودار راندمان موتور – شبیه‌سازی عملکرد مکانیکی">
-        Engine Efficiency Plot – Simulation of mechanical performance
-      </li>
-      <li data-en="Fuel Efficiency Prediction – ML-powered prediction GUI"
-          data-fa="پیش‌بینی مصرف سوخت – رابط گرافیکی مبتنی بر یادگیری ماشین">
-        Fuel Efficiency Prediction – ML-powered prediction GUI
-      </li>
-      <li data-en="Pipe Heat Loss – Basic thermal simulation"
-          data-fa="اتلاف حرارتی لوله – شبیه‌سازی ساده حرارتی">
-        Pipe Heat Loss – Basic thermal simulation
-      </li>
-    </ul>
-  </section>
+    <section id="projects" class="glass p-6">
+      <h2 class="text-2xl font-semibold mb-4">Projects</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-all hover:scale-105">
+          <h3 class="text-xl font-bold">Engine Efficiency Plot</h3>
+          <p>Plotting efficiency vs load with matplotlib – an educational simulation for mechanical systems.</p>
+        </div>
+        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-all hover:scale-105">
+          <h3 class="text-xl font-bold">Fuel Efficiency Prediction (ML)</h3>
+          <p>Regression model predicting car fuel usage using linear & random forest techniques. GUI included.</p>
+        </div>
+        <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-all hover:scale-105">
+          <h3 class="text-xl font-bold">Pipe Heat Loss</h3>
+          <p>Simulates thermal conduction and convection in pipe systems. Visualized with matplotlib.</p>
+        </div>
+      </div>
+    </section>
 
-  <section id="blog">
-    <h2 data-en="Blog" data-fa="بلاگ">Blog</h2>
-    <p data-en="Coming soon..." data-fa="به زودی...">Coming soon...</p>
-  </section>
+    <section id="blog" class="glass p-6">
+      <h2 class="text-2xl font-semibold mb-4">Blog / Articles</h2>
+      <ul id="blog-list">
+        <li class="mb-2">👉 <a href="#">Overcoming Barriers in Fuel Cell Vehicle Development</a></li>
+        <li class="mb-2">👉 <a href="#">Radiative Cooling Inspired by Desert Snail Shell</a></li>
+      </ul>
+    </section>
 
-  <section id="cv">
-    <h2 data-en="CV / Résumé" data-fa="رزومه">CV / Résumé</h2>
-    <p data-en="Download CV (PDF) – Click here" data-fa="دانلود رزومه (PDF) – اینجا کلیک کنید">
-      Download CV (PDF) – <a href="#">Click here</a>
-    </p>
-  </section>
+    <section id="cv" class="glass p-6">
+      <h2 class="text-2xl font-semibold mb-2">Resume</h2>
+      <a href="cv-hossein.pdf" class="underline text-blue-500 hover:text-blue-700">Download My CV (PDF)</a>
+    </section>
 
-  <section id="contact">
-    <h2 data-en="Contact" data-fa="تماس با من">Contact</h2>
-    <p data-en="Email: hosseinrj1994@gmail.com\nLinkedIn: @hossein-rajabloo\nGitHub: @HowsseinRj"
-       data-fa="ایمیل: hosseinrj1994@gmail.com\nلینکدین: @hossein-rajabloo\nگیت‌هاب: @HowsseinRj">
-      Email: hosseinrj1994@gmail.com<br />LinkedIn: @hossein-rajabloo<br />GitHub: @HowsseinRj
-    </p>
-  </section>
+    <section id="contact" class="glass p-6">
+      <h2 class="text-2xl font-semibold mb-2">Contact Me</h2>
+      <ul class="space-y-1">
+        <li><i class="fa fa-envelope"></i> hosseinrj1994@gmail.com</li>
+        <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/hossein-rajabloo" target="_blank">LinkedIn</a></li>
+        <li><i class="fab fa-github"></i> <a href="https://github.com/HowsseinRj" target="_blank">GitHub</a></li>
+        <li><i class="fa fa-globe"></i> <a href="https://howsseinrj.github.io/Python-Simulations/" target="_blank">GitHub Pages</a></li>
+      </ul>
+    </section>
+  </main>
 
-  <footer>
-    <p>&copy; 2025 Hossein Rajabloo. Built with ❤ and GitHub Pages.</p>
+  <footer class="text-center p-4 text-sm text-gray-600 dark:text-gray-400">
+    Made with ❤️ by Hossein Rajabloo · © 2025
   </footer>
 
   <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-        }
-      });
-    });
-    document.querySelectorAll('section').forEach(section => observer.observe(section));
+    ScrollReveal().reveal('.glass', { duration: 1000, origin: 'bottom', distance: '20px', reset: false });
 
-    const toggleBtn = document.getElementById('theme-toggle');
-    toggleBtn.onclick = () => {
-      const theme = document.documentElement.getAttribute('data-theme');
-      document.documentElement.setAttribute('data-theme', theme === 'light' ? 'dark' : 'light');
-    };
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+    }
 
-    const langBtn = document.getElementById('lang-toggle');
-    let lang = 'en';
-    langBtn.onclick = () => {
-      lang = lang === 'en' ? 'fa' : 'en';
-      langBtn.textContent = lang === 'en' ? 'فارسی' : 'English';
-      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-        el.textContent = el.getAttribute('data-' + lang);
-      });
-    };
+    function switchLang() {
+      const allText = document.body.innerHTML;
+      if (document.body.dir === 'ltr') {
+        document.body.dir = 'rtl';
+        document.documentElement.lang = 'fa';
+        document.body.innerHTML = allText.replace(/About Me/g, 'درباره من')
+          .replace(/Projects/g, 'پروژه‌ها')
+          .replace(/Blog \/ Articles/g, 'مقالات / نوشته‌ها')
+          .replace(/Resume/g, 'رزومه')
+          .replace(/Contact Me/g, 'تماس با من')
+          .replace(/Download My CV \(PDF\)/g, 'دانلود رزومه من (PDF)');
+      } else {
+        location.reload(); // simple toggle for now
+      }
+    }
   </script>
 </body>
 
