@@ -24,26 +24,5 @@
     "description": "Trains and saves a fuel efficiency prediction model for later use in applications."
   }
 ]
-[
-  {
-    "title": "شبیه‌سازی راندمان موتور",
-    "description": "نمودار راندمان مکانیکی موتور بر اساس بار - مناسب برای آموزش مفاهیم مهندسی مکانیک",
-    "link": "https://github.com/HowsseinRj/Python-Simulations/blob/main/engine_efficiency_plot.py"
-  },
-  {
-    "title": "مدل‌سازی انتقال حرارت لوله",
-    "description": "شبیه‌سازی اتلاف حرارت در لوله‌ها با فرمول‌های ساده هدایت و جابجایی حرارتی",
-    "link": "https://github.com/HowsseinRj/Python-Simulations/blob/main/pipe_heat_loss.py"
-  },
-  {
-    "title": "پیش‌بینی مصرف سوخت خودرو",
-    "description": "مدل ماشین لرنینگ برای پیش‌بینی MPG با رگرسیون خطی و جنگل تصادفی",
-    "link": "https://github.com/HowsseinRj/Python-Simulations/blob/main/fuel_efficiency_prediction.py"
-  },
-  {
-    "title": "رابط گرافیکی پیش‌بینی سوخت",
-    "description": "اپلیکیشن دسکتاپ با Tkinter برای ورود مشخصات خودرو و نمایش راندمان",
-    "link": "https://github.com/HowsseinRj/Python-Simulations/blob/main/fuel_predict_gui.py"
-  }
-]
+
 
