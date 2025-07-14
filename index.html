@@ -3,66 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hossein Rajabloo | Mechanical Engineer & AI Enthusiast</title>
+  <title>Hossein Rajabloo | Engineering Portfolio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', 'Vazirmatn', sans-serif;
-      background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
-      transition: all 0.3s ease;
+      background: linear-gradient(to right, #f0f4f8, #e2e8f0);
+      color: #111;
+      transition: 0.3s ease-in-out;
+    }
+    body.dark-mode {
+      background: linear-gradient(to right, #1f2937, #111827);
+      color: #e5e7eb;
     }
     header {
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+      background-color: rgba(255,255,255,0.7);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
     .glass {
-      background: rgba(255, 255, 255, 0.4);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-      backdrop-filter: blur(8px);
-      border-radius: 12px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 16px;
       padding: 2rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin-bottom: 2rem;
     }
-    .lang-switch { cursor: pointer; }
-    .dark-mode {
-      background-color: #111827;
-      color: #f9fafb;
+    .btn-glass {
+      background: rgba(255,255,255,0.3);
+      border: none;
+      backdrop-filter: blur(6px);
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+    .btn-glass:hover {
+      background: rgba(255,255,255,0.5);
+    }
+    .lang-switch {
+      cursor: pointer;
+      margin-right: 1rem;
+    }
+    .category-title {
+      font-weight: bold;
+      border-bottom: 2px solid #94a3b8;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
     }
   </style>
 </head>
-<body>
+<body lang="en">
 <header class="p-3 d-flex justify-content-between align-items-center">
-  <h1 class="h4 mb-0">Hossein Rajabloo</h1>
+  <h1 class="h5 mb-0">Hossein Rajabloo</h1>
   <div>
-    <span class="lang-switch me-3" onclick="switchLang()">🌐 فارسی / English</span>
-    <button class="btn btn-outline-dark" onclick="toggleDarkMode()">🌓</button>
+    <span class="lang-switch" onclick="switchLang()">🌐 EN / FA</span>
+    <button class="btn btn-glass" onclick="toggleDarkMode()">🌓</button>
   </div>
 </header>
 
-<main class="container mt-5">
-  <section class="glass mb-4">
-    <h2 data-en="About Me" data-fa="درباره من">About Me</h2>
-    <p id="about">Mechanical engineering graduate, ISI researcher in sustainable energy, vocational instructor, and Python + AI enthusiast with experience in SolidWorks, ANSYS, and real-world technical training.</p>
+<main class="container py-4">
+
+  <section class="glass">
+    <h2 class="category-title" data-en="About Me" data-fa="درباره من">About Me</h2>
+    <p id="about"></p>
   </section>
 
-  <section class="glass mb-4">
-    <h2 data-en="Projects" data-fa="پروژه‌ها">Projects</h2>
+  <section class="glass">
+    <h2 class="category-title" data-en="Projects" data-fa="پروژه‌ها">Projects</h2>
     <div id="projects" class="row row-cols-1 row-cols-md-2 g-4"></div>
   </section>
 
-  <section class="glass mb-4">
-    <h2 data-en="Resume" data-fa="رزومه">Resume</h2>
+  <section class="glass">
+    <h2 class="category-title" data-en="Resume" data-fa="رزومه">Resume</h2>
     <ul>
       <li>B.Sc. Mechanical Engineering, Mazandaran University of Science & Technology (2012–2017)</li>
       <li>Instructor at Ministry of Education (2023–Now)</li>
-      <li>Former HVAC Trainer at TVTO (2017–2019)</li>
-      <li>Researcher: Hydrogen fuel cell technologies, radiative cooling for PV efficiency</li>
+      <li>HVAC Trainer at TVTO (2017–2019)</li>
+      <li>Published in Civilica; ISI paper under review in Elsevier</li>
     </ul>
   </section>
 
-  <section class="glass mb-4">
-    <h2 data-en="Contact" data-fa="تماس با من">Contact</h2>
+  <section class="glass">
+    <h2 class="category-title" data-en="Contact" data-fa="تماس با من">Contact</h2>
     <form action="https://formsubmit.co/hosseinrj1994@gmail.com" method="POST">
       <div class="mb-2"><input type="text" name="name" class="form-control" placeholder="Name" required></div>
       <div class="mb-2"><input type="email" name="email" class="form-control" placeholder="Email" required></div>
@@ -70,72 +95,56 @@
       <button type="submit" class="btn btn-primary">Send</button>
     </form>
   </section>
+
 </main>
 
-<footer class="text-center p-3">
-  © 2025 Hossein Rajabloo | GitHub: @HowsseinRj
+<footer class="text-center py-3">
+  <small>© 2025 Hossein Rajabloo — Built with 💡 and hosted on GitHub Pages</small>
 </footer>
 
 <script>
-const projectsData = [
-  {
-    title: "Engine Efficiency Visualizer",
-    description: "Plots engine efficiency curves based on input load data."
-  },
-  {
-    title: "Fuel Efficiency Predictor (GUI)",
-    description: "Tkinter app for predicting MPG using machine learning."
-  },
-  {
-    title: "Pipe Heat Loss Simulator",
-    description: "Calculates thermal losses through pipelines using conduction equations."
-  },
-  {
-    title: "Fuel Efficiency ML Advanced",
-    description: "ML pipeline with dataset, model training and performance visualization."
-  }
-];
-
-const lang = {
-  en: {
-    about: "Mechanical engineering graduate, ISI researcher in sustainable energy, vocational instructor, and Python + AI enthusiast with experience in SolidWorks, ANSYS, and real-world technical training."
-  },
-  fa: {
-    about: "فارغ‌التحصیل مهندسی مکانیک، پژوهشگر ISI در حوزه انرژی پایدار، مدرس فنی‌و‌حرفه‌ای و علاقه‌مند به برنامه‌نویسی پایتون و هوش مصنوعی با تجربه کار با سالیدورک، انسیس و آموزش‌های عملی واقعی."
-  }
+const aboutText = {
+  en: `Mechanical engineering graduate, ISI researcher, vocational instructor, and Python + AI enthusiast. Skilled in SolidWorks, ANSYS, and data-driven simulations.`,
+  fa: `فارغ‌التحصیل مهندسی مکانیک، پژوهشگر ISI، مدرس فنی‌و‌حرفه‌ای و علاقه‌مند به پایتون و هوش مصنوعی. مسلط به سالیدورک، انسیس و شبیه‌سازی داده‌محور.`
 };
 
 function switchLang() {
-  const current = document.body.lang === "fa" ? "en" : "fa";
-  document.body.lang = current;
+  const lang = document.body.lang === 'en' ? 'fa' : 'en';
+  document.body.lang = lang;
+  document.getElementById('about').innerText = aboutText[lang];
   document.querySelectorAll('[data-en]').forEach(el => {
-    el.innerText = el.dataset[current];
+    el.innerText = el.dataset[lang];
   });
-  document.getElementById('about').innerText = lang[current].about;
 }
 
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
 }
 
-function renderProjects() {
-  const container = document.getElementById('projects');
-  container.innerHTML = '';
-  projectsData.forEach(p => {
-    container.innerHTML += `
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">${p.title}</h5>
-            <p class="card-text">${p.description}</p>
+function loadProjects() {
+  fetch("projects.json")
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("projects");
+      data.forEach(p => {
+        container.innerHTML += `
+          <div class="col">
+            <div class="card h-100 glass border-0">
+              <div class="card-body">
+                <h5 class="card-title">${p.title}</h5>
+                <p class="card-text">${p.description}</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    `;
-  });
+        `;
+      });
+    });
 }
 
-renderProjects();
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("about").innerText = aboutText.en;
+  loadProjects();
+});
 </script>
 </body>
 </html>
