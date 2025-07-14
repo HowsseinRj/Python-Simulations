@@ -1,114 +1,141 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hossein Rajabloo | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hossein Rajabloo | Mechanical Engineer & AI Enthusiast</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(145deg, #e0e0e0, #f5f5f5);
-      background-attachment: fixed;
-      font-family: 'Vazirmatn', sans-serif;
+      font-family: 'Inter', 'Vazirmatn', sans-serif;
+      background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+      transition: all 0.3s ease;
+    }
+    header {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.6);
     }
     .glass {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 2rem;
     }
-    .transition-all {
-      transition: all 0.4s ease-in-out;
-    }
-    .dark body {
-      background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    .lang-switch { cursor: pointer; }
+    .dark-mode {
+      background-color: #111827;
+      color: #f9fafb;
     }
   </style>
 </head>
+<body>
+<header class="p-3 d-flex justify-content-between align-items-center">
+  <h1 class="h4 mb-0">Hossein Rajabloo</h1>
+  <div>
+    <span class="lang-switch me-3" onclick="switchLang()">🌐 فارسی / English</span>
+    <button class="btn btn-outline-dark" onclick="toggleDarkMode()">🌓</button>
+  </div>
+</header>
 
-<body class="text-gray-900 dark:text-gray-100">
-  <header class="p-6 glass m-6 shadow-lg">
-    <div class="flex justify-between items-center">
-      <h1 class="text-3xl font-bold">Hossein Rajabloo</h1>
-      <div>
-        <button onclick="switchLang()" class="px-4 py-1 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-all">FA / EN</button>
-        <button onclick="toggleTheme()" class="ml-2 px-3 py-1 bg-gray-700 text-white rounded-full hover:bg-gray-800 transition-all"><i class="fa fa-moon"></i></button>
+<main class="container mt-5">
+  <section class="glass mb-4">
+    <h2 data-en="About Me" data-fa="درباره من">About Me</h2>
+    <p id="about">Mechanical engineering graduate, ISI researcher in sustainable energy, vocational instructor, and Python + AI enthusiast with experience in SolidWorks, ANSYS, and real-world technical training.</p>
+  </section>
+
+  <section class="glass mb-4">
+    <h2 data-en="Projects" data-fa="پروژه‌ها">Projects</h2>
+    <div id="projects" class="row row-cols-1 row-cols-md-2 g-4"></div>
+  </section>
+
+  <section class="glass mb-4">
+    <h2 data-en="Resume" data-fa="رزومه">Resume</h2>
+    <ul>
+      <li>B.Sc. Mechanical Engineering, Mazandaran University of Science & Technology (2012–2017)</li>
+      <li>Instructor at Ministry of Education (2023–Now)</li>
+      <li>Former HVAC Trainer at TVTO (2017–2019)</li>
+      <li>Researcher: Hydrogen fuel cell technologies, radiative cooling for PV efficiency</li>
+    </ul>
+  </section>
+
+  <section class="glass mb-4">
+    <h2 data-en="Contact" data-fa="تماس با من">Contact</h2>
+    <form action="https://formsubmit.co/hosseinrj1994@gmail.com" method="POST">
+      <div class="mb-2"><input type="text" name="name" class="form-control" placeholder="Name" required></div>
+      <div class="mb-2"><input type="email" name="email" class="form-control" placeholder="Email" required></div>
+      <div class="mb-2"><textarea name="message" class="form-control" rows="4" placeholder="Message" required></textarea></div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+  </section>
+</main>
+
+<footer class="text-center p-3">
+  © 2025 Hossein Rajabloo | GitHub: @HowsseinRj
+</footer>
+
+<script>
+const projectsData = [
+  {
+    title: "Engine Efficiency Visualizer",
+    description: "Plots engine efficiency curves based on input load data."
+  },
+  {
+    title: "Fuel Efficiency Predictor (GUI)",
+    description: "Tkinter app for predicting MPG using machine learning."
+  },
+  {
+    title: "Pipe Heat Loss Simulator",
+    description: "Calculates thermal losses through pipelines using conduction equations."
+  },
+  {
+    title: "Fuel Efficiency ML Advanced",
+    description: "ML pipeline with dataset, model training and performance visualization."
+  }
+];
+
+const lang = {
+  en: {
+    about: "Mechanical engineering graduate, ISI researcher in sustainable energy, vocational instructor, and Python + AI enthusiast with experience in SolidWorks, ANSYS, and real-world technical training."
+  },
+  fa: {
+    about: "فارغ‌التحصیل مهندسی مکانیک، پژوهشگر ISI در حوزه انرژی پایدار، مدرس فنی‌و‌حرفه‌ای و علاقه‌مند به برنامه‌نویسی پایتون و هوش مصنوعی با تجربه کار با سالیدورک، انسیس و آموزش‌های عملی واقعی."
+  }
+};
+
+function switchLang() {
+  const current = document.body.lang === "fa" ? "en" : "fa";
+  document.body.lang = current;
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.innerText = el.dataset[current];
+  });
+  document.getElementById('about').innerText = lang[current].about;
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
+
+function renderProjects() {
+  const container = document.getElementById('projects');
+  container.innerHTML = '';
+  projectsData.forEach(p => {
+    container.innerHTML += `
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">${p.title}</h5>
+            <p class="card-text">${p.description}</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </header>
-
-  <main class="p-6 space-y-12">
-    <!-- Sections here (about, resume, projects, etc.) remain unchanged -->
-
-    <section id="blog" class="glass p-6">
-      <h2 class="text-2xl font-semibold mb-4">📝 Blog Posts</h2>
-      <div id="blog-posts" class="space-y-4"></div>
-    </section>
-
-    <section id="json-projects" class="glass p-6">
-      <h2 class="text-2xl font-semibold mb-4">📦 Dynamic Projects</h2>
-      <div id="project-list" class="grid md:grid-cols-2 gap-6"></div>
-    </section>
-
-    <section id="contact-form" class="glass p-6">
-      <h2 class="text-2xl font-semibold mb-4">📬 Contact Form</h2>
-      <form class="space-y-4">
-        <input type="text" placeholder="Name" class="w-full p-2 rounded bg-white dark:bg-gray-800 border" required />
-        <input type="email" placeholder="Email" class="w-full p-2 rounded bg-white dark:bg-gray-800 border" required />
-        <textarea placeholder="Message" rows="4" class="w-full p-2 rounded bg-white dark:bg-gray-800 border" required></textarea>
-        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Send</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="text-center p-4 text-sm text-gray-600 dark:text-gray-400">
-    Made with ❤️ by Hossein Rajabloo · © 2025
-  </footer>
-
-  <script>
-    ScrollReveal().reveal('.glass', { duration: 1000, origin: 'bottom', distance: '20px', reset: false });
-
-    function toggleTheme() {
-      document.documentElement.classList.toggle('dark');
-    }
-
-    function switchLang() {
-      const langNow = document.documentElement.lang;
-      if (langNow === 'en') {
-        document.documentElement.lang = 'fa';
-        document.body.dir = 'rtl';
-        // Text swap logic here (you can expand this)
-      } else {
-        location.reload();
-      }
-    }
-
-    // Fetch dynamic projects
-    axios.get('./projects.json')
-      .then(response => {
-        const container = document.getElementById('project-list');
-        response.data.forEach(project => {
-          const card = document.createElement('div');
-          card.className = 'p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:scale-105 transition-all';
-          card.innerHTML = `<h3 class="text-xl font-bold">${project.title}</h3><p>${project.description}</p>`;
-          container.appendChild(card);
-        });
-      });
-
-    // Load blog posts from markdown or JSON in future
-    document.getElementById('blog-posts').innerHTML = `
-      <article class="p-4 bg-white dark:bg-gray-800 rounded shadow">
-        <h3 class="text-lg font-bold">Launching My GitHub Portfolio</h3>
-        <p>Sharing my simulations, machine learning models, and academic work in a modern, open-source format.</p>
-      </article>
     `;
-  </script>
-</body>
+  });
+}
 
+renderProjects();
+</script>
+</body>
 </html>
