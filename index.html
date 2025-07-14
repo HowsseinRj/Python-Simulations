@@ -1,91 +1,105 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { Sparkles, Globe2, FileText, Send } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hossein Rajabloo | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'Vazirmatn', 'sans-serif'],
+          },
+          colors: {
+            glass: 'rgba(255,255,255,0.05)',
+          },
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      transition: background 0.3s, color 0.3s;
+    }
+    .rtl {
+      direction: rtl;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <!-- Language Switcher -->
+  <div class="fixed top-4 right-4 z-50">
+    <button onclick="switchLang('en')" class="px-2 py-1 text-sm bg-white/10 rounded-md mr-2">EN</button>
+    <button onclick="switchLang('fa')" class="px-2 py-1 text-sm bg-white/10 rounded-md">FA</button>
+  </div>
 
-export default function InfographicPortfolio() {
-  const projects = [
-    {
-      title: "Engine Efficiency Plot",
-      description:
-        "Visualizing mechanical efficiency trends under different loads using real data.",
-      link: "https://github.com/HowsseinRj/Python-Simulations/blob/main/engine_efficiency_plot.py",
-    },
-    {
-      title: "Fuel Efficiency ML Prediction",
-      description:
-        "Predict car fuel consumption with ML. Includes regression & visualization.",
-      link: "https://github.com/HowsseinRj/Python-Simulations/blob/main/fuel_efficiency_ml_advanced.py",
-    },
-    {
-      title: "Desktop Fuel Predictor GUI",
-      description:
-        "Tkinter-based app for live car efficiency prediction using trained models.",
-      link: "https://github.com/HowsseinRj/Python-Simulations/blob/main/fuel_predict_gui.py",
-    },
-  ];
+  <!-- Dark mode switch -->
+  <div class="fixed top-4 left-4 z-50">
+    <button onclick="document.documentElement.classList.toggle('dark')" class="px-2 py-1 text-sm bg-white/10 rounded-md">🌓</button>
+  </div>
 
-  return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-950 to-gray-900 text-white font-sans">
-      <section className="text-center py-12 px-4">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold mb-4"
-        >
-          Hossein Rajabloo | Mechanical Engineer & AI Enthusiast
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-lg text-gray-400 max-w-2xl mx-auto"
-        >
-          Specialized in engineering simulations, machine learning and real-world energy systems. 🚀
-        </motion.p>
-      </section>
+  <!-- Hero Section -->
+  <section class="pt-24 pb-12 text-center px-4">
+    <h1 id="hero-title-en" class="text-4xl md:text-5xl font-bold">Welcome to My Engineering Portfolio</h1>
+    <h1 id="hero-title-fa" class="text-4xl md:text-5xl font-bold hidden rtl">به پرتفولیوی مهندسی من خوش آمدید</h1>
+    <p class="text-gray-400 mt-4" id="hero-desc-en">Showcasing my projects, research, and contact details</p>
+    <p class="text-gray-400 mt-4 hidden rtl" id="hero-desc-fa">نمایش پروژه‌ها، تحقیقات، و راه‌های ارتباطی من</p>
+  </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-12">
-        {projects.map((p, index) => (
-          <Card key={index} className="bg-gray-800 border-none rounded-2xl shadow-lg">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-4 mb-4">
-                <Sparkles className="text-yellow-400" />
-                <h3 className="text-xl font-semibold">{p.title}</h3>
-              </div>
-              <p className="text-gray-400 mb-4">{p.description}</p>
-              <a href={p.link} target="_blank" rel="noopener noreferrer">
-                <Button className="w-full">View on GitHub</Button>
-              </a>
-            </CardContent>
-          </Card>
-        ))}
-      </section>
+  <!-- Projects List from JSON -->
+  <section class="max-w-5xl mx-auto px-4 py-12" id="projects">
+    <h2 class="text-2xl font-semibold mb-6" id="projects-title-en">🚀 Projects</h2>
+    <h2 class="text-2xl font-semibold mb-6 hidden rtl" id="projects-title-fa">🚀 پروژه‌ها</h2>
+    <div id="project-container" class="grid md:grid-cols-3 gap-6"></div>
+  </section>
 
-      <section className="bg-gray-950 py-12 px-6 text-center">
-        <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
-        <p className="text-gray-400 mb-6">
-          Want to collaborate or ask a question? Reach out via the options below:
-        </p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <a href="https://howsseinrj.github.io/Python-Simulations" target="_blank">
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              <Globe2 className="mr-2" /> Website
-            </Button>
-          </a>
-          <a href="mailto:hosseinrj1994@gmail.com">
-            <Button className="bg-green-600 hover:bg-green-700">
-              <Send className="mr-2" /> Email Me
-            </Button>
-          </a>
-          <a href="https://github.com/HowsseinRj" target="_blank">
-            <Button className="bg-purple-600 hover:bg-purple-700">
-              <FileText className="mr-2" /> GitHub
-            </Button>
-          </a>
-        </div>
-      </section>
-    </main>
-  );
-}
+  <!-- Contact Form -->
+  <section class="max-w-4xl mx-auto px-4 py-12 text-center" id="contact">
+    <h3 class="text-2xl font-semibold mb-4" id="contact-title-en">📬 Contact Me</h3>
+    <h3 class="text-2xl font-semibold mb-4 hidden rtl" id="contact-title-fa">📬 تماس با من</h3>
+    <form action="mailto:hosseinrj1994@gmail.com" method="POST" class="space-y-4">
+      <input type="text" name="name" placeholder="Your Name" class="w-full p-2 rounded bg-white/10 text-white">
+      <input type="email" name="email" placeholder="Your Email" class="w-full p-2 rounded bg-white/10 text-white">
+      <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-2 rounded bg-white/10 text-white"></textarea>
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 py-6 text-sm">
+    <span id="footer-en">Made by Hossein Rajabloo | GitHub: @HowsseinRj</span>
+    <span id="footer-fa" class="hidden rtl">ساخته شده توسط حسین رجب‌لو | گیت‌هاب: @HowsseinRj</span>
+  </footer>
+
+  <script>
+    const projects = [
+      { title: "Engine Efficiency Plot", desc: "Load vs efficiency plot in mechanical systems." },
+      { title: "Fuel Efficiency Prediction", desc: "ML-based fuel consumption prediction tool." },
+      { title: "Pipe Heat Loss", desc: "Simulating heat loss in pipeline using Python." }
+    ];
+
+    const container = document.getElementById('project-container');
+    projects.forEach(proj => {
+      const card = document.createElement('div');
+      card.className = "bg-white/5 p-4 rounded-xl shadow hover:shadow-xl transition";
+      card.innerHTML = `<h4 class='font-bold text-lg mb-2'>${proj.title}</h4><p class='text-gray-300 text-sm'>${proj.desc}</p>`;
+      container.appendChild(card);
+    });
+
+    function switchLang(lang) {
+      const all = document.querySelectorAll('[id*="-en"], [id*="-fa"]');
+      all.forEach(el => el.classList.add('hidden'));
+      const visible = document.querySelectorAll(`[id*="-${lang}"]`);
+      visible.forEach(el => el.classList.remove('hidden'));
+
+      if (lang === 'fa') document.body.classList.add('rtl');
+      else document.body.classList.remove('rtl');
+    }
+  </script>
+</body>
+</html>
