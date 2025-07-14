@@ -3,201 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hossein Rajabloo | Portfolio Website</title>
+  <title>Hossein Rajabloo | Mechanical Engineer & Researcher</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    :root {
-      --primary: #2c3e50;
-      --accent: #3498db;
-      --bg: #f9f9f9;
-      --dark: #111;
-      --transition: all 0.3s ease;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Vazirmatn', sans-serif;
-    }
     body {
-      background-color: var(--bg);
-      color: var(--primary);
-      scroll-behavior: smooth;
-      transition: var(--transition);
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: #f4f7fa;
+      color: #2c3e50;
     }
     header {
-      background: white;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem 0;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 999;
     }
-    header nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: var(--primary);
-      transition: var(--transition);
-    }
-    header nav a:hover {
-      color: var(--accent);
-    }
-    .language-switch {
-      cursor: pointer;
-      font-size: 0.9rem;
-      color: var(--accent);
+    .navbar-brand {
+      font-weight: bold;
+      color: #2c3e50;
     }
     .hero {
-      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #dbeafe, #fef9c3);
+      padding: 6rem 1rem;
       text-align: center;
-      background: linear-gradient(to left, #e3f2fd, #fff);
     }
     .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 2.8rem;
+      font-weight: bold;
     }
     .hero p {
-      font-size: 1.1rem;
-      color: #555;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
+      font-size: 1.25rem;
+      margin-top: 1rem;
     }
     .section-title {
       font-size: 2rem;
-      margin-bottom: 1.5rem;
+      margin: 2rem 0 1rem;
       text-align: center;
       position: relative;
     }
     .section-title::after {
       content: '';
-      display: block;
       width: 60px;
       height: 4px;
-      background: var(--accent);
-      margin: 10px auto 0;
+      background-color: #0d6efd;
+      display: block;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+    .project-card, .blog-card {
+      transition: all 0.3s ease;
     }
-    .card {
-      background: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      transition: var(--transition);
-    }
-    .card:hover {
+    .project-card:hover, .blog-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
     footer {
-      background: #eee;
+      background-color: #f1f5f9;
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
-      color: #555;
     }
-    @media screen and (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
+    .lang-switch {
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: #0d6efd;
+      margin-left: 1rem;
     }
   </style>
   <script>
     function switchLanguage(lang) {
       document.body.setAttribute("lang", lang);
       document.body.setAttribute("dir", lang === 'fa' ? 'rtl' : 'ltr');
-      const elements = document.querySelectorAll('[data-en], [data-fa]');
-      elements.forEach(el => {
+      document.querySelectorAll('[data-en], [data-fa]').forEach(el => {
         el.innerText = lang === 'fa' ? el.getAttribute('data-fa') : el.getAttribute('data-en');
       });
     }
   </script>
 </head>
-<body lang="en">
-  <header>
-    <div data-en="Hossein Rajabloo" data-fa="حسین رجبلو">Hossein Rajabloo</div>
-    <nav>
-      <a href="#about" data-en="About" data-fa="درباره">About</a>
-      <a href="#projects" data-en="Projects" data-fa="پروژه‌ها">Projects</a>
-      <a href="#blog" data-en="Blog" data-fa="نوشته‌ها">Blog</a>
-      <a href="#cv" data-en="CV" data-fa="رزومه">CV</a>
-      <a href="#contact" data-en="Contact" data-fa="تماس">Contact</a>
-      <span class="language-switch" onclick="switchLanguage('en')">EN</span> |
-      <span class="language-switch" onclick="switchLanguage('fa')">FA</span>
-    </nav>
+<body>
+  <header class="shadow-sm">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="#">Hossein Rajabloo</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#about" data-en="About" data-fa="درباره">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects" data-en="Projects" data-fa="پروژه‌ها">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#blog" data-en="Blog" data-fa="نوشته‌ها">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cv" data-en="CV" data-fa="رزومه">CV</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact" data-en="Contact" data-fa="تماس">Contact</a></li>
+            <li class="nav-item lang-switch" onclick="switchLanguage('en')">EN</li>
+            <li class="nav-item lang-switch" onclick="switchLanguage('fa')">FA</li>
+          </ul>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <div class="hero">
     <h1 data-en="Hi, I'm Hossein 👋" data-fa="سلام، من حسینم 👋">Hi, I'm Hossein 👋</h1>
-    <p data-en="Researcher, Developer & Educator | Passionate about Simulation, Python, and AI"
-       data-fa="پژوهشگر، برنامه‌نویس و مدرس | علاقمند به شبیه‌سازی، پایتون و هوش مصنوعی">
-       Researcher, Developer & Educator | Passionate about Simulation, Python, and AI
+    <p data-en="Engineer | ISI Researcher | Python Enthusiast | Passionate about Fuel Cells & AI"
+       data-fa="مهندس | پژوهشگر ISI | علاقه‌مند به پایتون و فناوری پیل سوختی و هوش مصنوعی">
+       Engineer | ISI Researcher | Python Enthusiast | Passionate about Fuel Cells & AI
     </p>
   </div>
 
-  <section id="about">
+  <section class="container py-5" id="about">
     <h2 class="section-title" data-en="About Me" data-fa="درباره من">About Me</h2>
-    <p style="text-align:center; max-width:600px; margin:auto;" data-en="I'm a Mechanical Engineer and Vocational Instructor based in Iran. I specialize in simulation projects, scientific coding, and educational tools for students in mechanical engineering."
-       data-fa="من مهندس مکانیک و مدرس هنرستان در ایران هستم. تخصص من در پروژه‌های شبیه‌سازی، برنامه‌نویسی علمی، و تولید ابزارهای آموزشی برای دانشجویان مهندسی مکانیک است.">
-      I'm a Mechanical Engineer and Vocational Instructor based in Iran...
-    </p>
+    <p class="text-center">I hold a B.Sc. in Mechanical Engineering from Mazandaran University of Science and Technology and currently serve as a Vocational Automotive Instructor at the Ministry of Education (Iran). I have authored ISI-level research including studies on fuel cell vehicles and biomimetic cooling films. I'm passionate about AI, scientific programming, and empowering students through practical education and simulations.</p>
   </section>
 
-  <section id="projects">
-    <h2 class="section-title" data-en="Projects" data-fa="پروژه‌ها">Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>⚙️ Engine Efficiency Plot</h3>
-        <p>Plots mechanical efficiency of engines based on load using matplotlib</p>
+  <section class="container" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card project-card p-3">
+          <h5>⚙️ Engine Efficiency Plot</h5>
+          <p>Plots mechanical engine efficiency vs. load. Great for thermal performance understanding.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>🧠 Fuel Efficiency ML</h3>
-        <p>ML model to predict vehicle MPG using regression and real-world data</p>
+      <div class="col-md-4">
+        <div class="card project-card p-3">
+          <h5>🧠 Fuel Efficiency ML</h5>
+          <p>Predicts MPG using Random Forest vs. Linear Regression. Based on real data.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>🖥️ GUI Fuel Predictor</h3>
-        <p>Tkinter-based desktop app to enter specs and get real-time predictions</p>
+      <div class="col-md-4">
+        <div class="card project-card p-3">
+          <h5>🖥️ Fuel Prediction GUI</h5>
+          <p>Desktop app for predicting fuel use with a trained ML model.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="blog">
-    <h2 class="section-title" data-en="Blog & Publications" data-fa="نوشته‌ها">Blog & Publications</h2>
-    <p style="text-align:center">
-      Published in Civilica: Hydrogen Fuel Cell Challenges in Automotive Development<br>
-      Under review at Elsevier: Biomimetic Radiative Cooling for PV Efficiency
-    </p>
+  <section class="container" id="blog">
+    <h2 class="section-title">Publications</h2>
+    <ul>
+      <li>✅ <strong>Published:</strong> Evaluation of Barriers to Hydrogen Fuel Cell Adoption (Civilica)</li>
+      <li>🔄 <strong>Under Review:</strong> Biomimetic Radiative Cooling Film for Solar Panel Efficiency (Elsevier)</li>
+    </ul>
   </section>
 
-  <section id="cv">
-    <h2 class="section-title" data-en="Curriculum Vitae" data-fa="رزومه">Curriculum Vitae</h2>
-    <p style="text-align:center">
-      🎓 B.Sc. in Mechanical Engineering<br>
-      🧪 ISI Researcher – Hydrogen & Cooling Films<br>
-      🧰 Python, ML, SolidWorks, ANSYS<br>
-      📄 <a href="#">Download CV</a>
-    </p>
+  <section class="container" id="cv">
+    <h2 class="section-title">CV Snapshot</h2>
+    <ul>
+      <li>🎓 B.Sc. in Mechanical Engineering (MUST)</li>
+      <li>🧪 ISI Researcher – Fuel Cells & Radiative Cooling</li>
+      <li>📊 Python, SolidWorks, ANSYS, ML, CFD</li>
+      <li>👨‍🏫 Vocational Instructor (Ministry of Education)</li>
+    </ul>
+    <p class="text-center"><a class="btn btn-outline-primary" href="#">Download Full CV</a></p>
   </section>
 
-  <section id="contact">
-    <h2 class="section-title" data-en="Contact Me" data-fa="تماس با من">Contact Me</h2>
-    <p style="text-align:center">
+  <section class="container" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="text-center">
       📧 hosseinrj1994@gmail.com<br>
-      🔗 <a href="https://github.com/HowsseinRj">GitHub</a> | <a href="https://linkedin.com/in/hossein-rajabloo">LinkedIn</a>
+      🔗 <a href="https://linkedin.com/in/hossein-rajabloo">LinkedIn</a> | <a href="https://github.com/HowsseinRj">GitHub</a>
     </p>
   </section>
 
   <footer>
-    Designed with ❤️ by Hossein Rajabloo | 2025
+    Designed & Developed by Hossein Rajabloo | GitHub Pages 2025
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
