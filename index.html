@@ -5,22 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hossein Rajabloo | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Outfit', 'Vazirmatn', 'sans-serif'],
-          },
-          colors: {
-            glass: 'rgba(255,255,255,0.05)',
-          },
-        }
-      }
-    };
-  </script>
   <style>
     body {
       transition: background 0.3s, color 0.3s;
@@ -45,24 +29,24 @@
 
   <!-- Hero Section -->
   <section class="pt-24 pb-12 text-center px-4">
-    <h1 id="hero-title-en" class="text-4xl md:text-5xl font-bold">Welcome to My Engineering Portfolio</h1>
-    <h1 id="hero-title-fa" class="text-4xl md:text-5xl font-bold hidden rtl">به پرتفولیوی مهندسی من خوش آمدید</h1>
-    <p class="text-gray-400 mt-4" id="hero-desc-en">Showcasing my projects, research, and contact details</p>
-    <p class="text-gray-400 mt-4 hidden rtl" id="hero-desc-fa">نمایش پروژه‌ها، تحقیقات، و راه‌های ارتباطی من</p>
+    <h1 id="hero-title-en" class="text-4xl md:text-5xl font-bold" aria-live="polite">Welcome to My Engineering Portfolio</h1>
+    <h1 id="hero-title-fa" class="text-4xl md:text-5xl font-bold hidden rtl" aria-live="polite">به پرتفولیوی مهندسی من خوش آمدید</h1>
+    <p class="text-gray-400 mt-4" id="hero-desc-en" aria-live="polite">Showcasing my projects, research, and contact details</p>
+    <p class="text-gray-400 mt-4 hidden rtl" id="hero-desc-fa" aria-live="polite">نمایش پروژه‌ها، تحقیقات، و راه‌های ارتباطی من</p>
   </section>
 
   <!-- Projects List from JSON -->
   <section class="max-w-5xl mx-auto px-4 py-12" id="projects">
-    <h2 class="text-2xl font-semibold mb-6" id="projects-title-en">🚀 Projects</h2>
-    <h2 class="text-2xl font-semibold mb-6 hidden rtl" id="projects-title-fa">🚀 پروژه‌ها</h2>
+    <h2 class="text-2xl font-semibold mb-6" id="projects-title-en" aria-live="polite">🚀 Projects</h2>
+    <h2 class="text-2xl font-semibold mb-6 hidden rtl" id="projects-title-fa" aria-live="polite">🚀 پروژه‌ها</h2>
     <div id="project-container" class="grid md:grid-cols-3 gap-6"></div>
   </section>
 
   <!-- Contact Form -->
   <section class="max-w-4xl mx-auto px-4 py-12 text-center" id="contact">
-    <h3 class="text-2xl font-semibold mb-4" id="contact-title-en">📬 Contact Me</h3>
-    <h3 class="text-2xl font-semibold mb-4 hidden rtl" id="contact-title-fa">📬 تماس با من</h3>
-    <form action="mailto:hosseinrj1994@gmail.com" method="POST" class="space-y-4">
+    <h3 class="text-2xl font-semibold mb-4" id="contact-title-en" aria-live="polite">📬 Contact Me</h3>
+    <h3 class="text-2xl font-semibold mb-4 hidden rtl" id="contact-title-fa" aria-live="polite">📬 تماس با من</h3>
+    <form action="mailto:hosseinrj1994@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
       <input type="text" name="name" placeholder="Your Name" class="w-full p-2 rounded bg-white/10 text-white">
       <input type="email" name="email" placeholder="Your Email" class="w-full p-2 rounded bg-white/10 text-white">
       <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-2 rounded bg-white/10 text-white"></textarea>
@@ -75,6 +59,9 @@
     <span id="footer-en">Made by Hossein Rajabloo | GitHub: @HowsseinRj</span>
     <span id="footer-fa" class="hidden rtl">ساخته شده توسط حسین رجب‌لو | گیت‌هاب: @HowsseinRj</span>
   </footer>
+
+  <!-- Tailwind CSS CDN Script (Moved to end of body for performance) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
     const projects = [
@@ -97,8 +84,23 @@
       const visible = document.querySelectorAll(`[id*="-${lang}"]`);
       visible.forEach(el => el.classList.remove('hidden'));
 
-      if (lang === 'fa') document.body.classList.add('rtl');
-      else document.body.classList.remove('rtl');
+      if (lang === 'fa') {
+        document.documentElement.lang = "fa";  // Update lang attribute
+        document.body.classList.add('rtl');
+        document.getElementById('hero-title-en').innerHTML = "به پرتفولیوی مهندسی من خوش آمدید";
+        document.getElementById('hero-desc-en').innerHTML = "نمایش پروژه‌ها، تحقیقات، و راه‌های ارتباطی من";
+        document.getElementById('projects-title-en').innerHTML = "🚀 پروژه‌ها";
+        document.getElementById('contact-title-en').innerHTML = "📬 تماس با من";
+        document.getElementById('footer-en').innerHTML = "ساخته شده توسط حسین رجب‌لو | گیت‌هاب: @HowsseinRj";
+      } else {
+        document.documentElement.lang = "en";  // Reset lang attribute
+        document.body.classList.remove('rtl');
+        document.getElementById('hero-title-en').innerHTML = "Welcome to My Engineering Portfolio";
+        document.getElementById('hero-desc-en').innerHTML = "Showcasing my projects, research, and contact details";
+        document.getElementById('projects-title-en').innerHTML = "🚀 Projects";
+        document.getElementById('contact-title-en').innerHTML = "📬 Contact Me";
+        document.getElementById('footer-en').innerHTML = "Made by Hossein Rajabloo | GitHub: @HowsseinRj";
+      }
     }
   </script>
 </body>
