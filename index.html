@@ -1,75 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hossein Rajabloo | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      transition: background 0.3s, color 0.3s;
-    }
-    .rtl {
-      direction: rtl;
-    }
-    .hidden { display: none; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hossein RJ | AI Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            primary: '#10b981',
+          },
+        },
+      },
+    };
+  </script>
 </head>
-<body class="bg-gray-900 text-white font-sans">
-  <!-- Language Switcher -->
-  <div class="fixed top-4 right-4 z-50">
-    <button onclick="switchLang('en')" class="px-2 py-1 text-sm bg-white/10 rounded-md mr-2">EN</button>
-    <button onclick="switchLang('fa')" class="px-2 py-1 text-sm bg-white/10 rounded-md">FA</button>
-  </div>
+<body class="bg-gray-900 text-white font-sans transition-all">
+  <!-- Header -->
+  <header class="p-4 flex justify-between items-center border-b border-white/10">
+    <h1 class="text-xl font-bold">Hossein RJ</h1>
+    <div class="space-x-3">
+      <button onclick="toggleDark()" class="bg-white/10 px-3 py-1 rounded">🌓</button>
+      <button onclick="switchLang('en')" class="bg-white/10 px-2 py-1 text-sm">EN</button>
+      <button onclick="switchLang('fa')" class="bg-white/10 px-2 py-1 text-sm">FA</button>
+    </div>
+  </header>
 
-  <!-- Dark mode switch -->
-  <div class="fixed top-4 left-4 z-50">
-    <button onclick="document.documentElement.classList.toggle('dark')" class="px-2 py-1 text-sm bg-white/10 rounded-md">🌓</button>
-  </div>
-
-  <!-- Hero Section -->
-  <section class="pt-24 pb-12 text-center px-4">
-    <h1 id="hero-title-en" class="text-4xl md:text-5xl font-bold" aria-live="polite">Welcome to My Engineering Portfolio</h1>
-    <h1 id="hero-title-fa" class="text-4xl md:text-5xl font-bold hidden rtl" aria-live="polite">به پرتفولیوی مهندسی من خوش آمدید</h1>
-    <p class="text-gray-400 mt-4" id="hero-desc-en" aria-live="polite">Showcasing my projects, research, and contact details</p>
-    <p class="text-gray-400 mt-4 hidden rtl" id="hero-desc-fa" aria-live="polite">نمایش پروژه‌ها، تحقیقات، و راه‌های ارتباطی من</p>
+  <!-- Hero -->
+  <section class="text-center py-10 px-4">
+    <h2 id="hero-title-en" class="text-3xl font-semibold">Welcome to My AI-Driven Portfolio</h2>
+    <h2 id="hero-title-fa" class="text-3xl font-semibold hidden rtl">به پرتفولیوی هوش مصنوعی من خوش آمدید</h2>
+    <p id="hero-desc-en" class="text-gray-400 mt-3">Projects, tools, and research powered by Python & AI</p>
+    <p id="hero-desc-fa" class="text-gray-400 mt-3 hidden rtl">پروژه‌ها، ابزارها و تحقیقات مبتنی بر پایتون و هوش مصنوعی</p>
   </section>
 
-  <!-- Projects List from JSON -->
-  <section class="max-w-5xl mx-auto px-4 py-12" id="projects">
-    <h2 class="text-2xl font-semibold mb-6" id="projects-title-en" aria-live="polite">🚀 Projects</h2>
-    <h2 class="text-2xl font-semibold mb-6 hidden rtl" id="projects-title-fa" aria-live="polite">🚀 پروژه‌ها</h2>
-    <div id="project-container" class="grid md:grid-cols-3 gap-6"></div>
+  <!-- Projects -->
+  <section class="max-w-5xl mx-auto px-4 py-8">
+    <h3 class="text-2xl font-semibold mb-6" id="projects-title-en">🚀 My Projects</h3>
+    <h3 class="text-2xl font-semibold mb-6 hidden rtl" id="projects-title-fa">🚀 پروژه‌های من</h3>
+    <div class="grid md:grid-cols-3 gap-6" id="project-container"></div>
   </section>
 
-  <!-- Contact Form -->
-  <section class="max-w-4xl mx-auto px-4 py-12 text-center" id="contact">
-    <h3 class="text-2xl font-semibold mb-4" id="contact-title-en" aria-live="polite">📬 Contact Me</h3>
-    <h3 class="text-2xl font-semibold mb-4 hidden rtl" id="contact-title-fa" aria-live="polite">📬 تماس با من</h3>
+  <!-- Fake Chat -->
+  <section class="max-w-2xl mx-auto px-4 py-8 bg-white/5 rounded-xl">
+    <h3 class="text-lg font-semibold mb-4">💬 AI Chat Demo</h3>
+    <div class="space-y-3">
+      <div class="bg-gray-800 p-3 rounded">👤 You: What is CFD?</div>
+      <div class="bg-gray-700 p-3 rounded">🤖 AI: CFD stands for Computational Fluid Dynamics...</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="max-w-xl mx-auto px-4 py-10 text-center">
+    <h3 id="contact-title-en" class="text-2xl font-semibold mb-4">📬 Contact Me</h3>
+    <h3 id="contact-title-fa" class="text-2xl font-semibold mb-4 hidden rtl">📬 تماس با من</h3>
     <form action="mailto:hosseinrj1994@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
       <input type="text" name="name" placeholder="Your Name" class="w-full p-2 rounded bg-white/10 text-white">
       <input type="email" name="email" placeholder="Your Email" class="w-full p-2 rounded bg-white/10 text-white">
       <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-2 rounded bg-white/10 text-white"></textarea>
-      <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded">Send</button>
+      <button type="submit" class="bg-primary hover:bg-emerald-600 px-6 py-2 rounded">Send</button>
     </form>
   </section>
 
   <!-- Footer -->
   <footer class="text-center text-gray-500 py-6 text-sm">
-    <span id="footer-en">Made by Hossein Rajabloo | GitHub: @HowsseinRj</span>
-    <span id="footer-fa" class="hidden rtl">ساخته شده توسط حسین رجب‌لو | گیت‌هاب: @HowsseinRj</span>
+    <span id="footer-en">Made with ❤️ by Hossein Rajabloo</span>
+    <span id="footer-fa" class="hidden rtl">ساخته‌شده با ❤️ توسط حسین رجب‌لو</span>
   </footer>
 
-  <!-- Tailwind CSS CDN Script (Moved to end of body for performance) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <!-- Script -->
   <script>
     const projects = [
-      { title: "Engine Efficiency Plot", desc: "Load vs efficiency plot in mechanical systems." },
-      { title: "Fuel Efficiency Prediction", desc: "ML-based fuel consumption prediction tool." },
-      { title: "Pipe Heat Loss", desc: "Simulating heat loss in pipeline using Python." }
+      { title: "CFD Simulation", desc: "Fluid flow simulation using OpenFOAM." },
+      { title: "AI Chatbot", desc: "Natural language chatbot with Python." },
+      { title: "Data Visualizer", desc: "Plot scientific data dynamically." }
     ];
-
     const container = document.getElementById('project-container');
     projects.forEach(proj => {
       const card = document.createElement('div');
@@ -78,29 +89,17 @@
       container.appendChild(card);
     });
 
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+    }
+
     function switchLang(lang) {
+      document.documentElement.lang = lang;
       const all = document.querySelectorAll('[id*="-en"], [id*="-fa"]');
       all.forEach(el => el.classList.add('hidden'));
       const visible = document.querySelectorAll(`[id*="-${lang}"]`);
       visible.forEach(el => el.classList.remove('hidden'));
-
-      if (lang === 'fa') {
-        document.documentElement.lang = "fa";  // Update lang attribute
-        document.body.classList.add('rtl');
-        document.getElementById('hero-title-en').innerHTML = "به پرتفولیوی مهندسی من خوش آمدید";
-        document.getElementById('hero-desc-en').innerHTML = "نمایش پروژه‌ها، تحقیقات، و راه‌های ارتباطی من";
-        document.getElementById('projects-title-en').innerHTML = "🚀 پروژه‌ها";
-        document.getElementById('contact-title-en').innerHTML = "📬 تماس با من";
-        document.getElementById('footer-en').innerHTML = "ساخته شده توسط حسین رجب‌لو | گیت‌هاب: @HowsseinRj";
-      } else {
-        document.documentElement.lang = "en";  // Reset lang attribute
-        document.body.classList.remove('rtl');
-        document.getElementById('hero-title-en').innerHTML = "Welcome to My Engineering Portfolio";
-        document.getElementById('hero-desc-en').innerHTML = "Showcasing my projects, research, and contact details";
-        document.getElementById('projects-title-en').innerHTML = "🚀 Projects";
-        document.getElementById('contact-title-en').innerHTML = "📬 Contact Me";
-        document.getElementById('footer-en').innerHTML = "Made by Hossein Rajabloo | GitHub: @HowsseinRj";
-      }
+      document.body.classList.toggle('rtl', lang === 'fa');
     }
   </script>
 </body>
