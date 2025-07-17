@@ -1,179 +1,139 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" id="html">
+<html lang="en" dir="ltr" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hossein RJ | پرتفولیو و رزومه</title>
-  <meta name="description" content="پرتفولیوی حسین رجب‌لو: مهندس مکانیک، متخصص CFD و هوش مصنوعی با چندین پروژه علمی و صنعتی.">
-  <!-- فونت فارسی وزیر متن -->
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hossein Rajabloo | Mechanical Engineer & AI Researcher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
-      theme: { extend: {} }
-    }
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit','Vazirmatn','sans-serif']
+          },
+          colors: { glass: 'rgba(255,255,255,0.05)' }
+        }
+      }
+    };
   </script>
   <style>
-    body { font-family: 'Vazirmatn', sans-serif; }
+    .rtl { direction: rtl; }
+    body { transition: background 0.3s,color 0.3s; }
   </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+<body class="bg-gray-900 text-white font-sans">
 
-  <!-- NAVBAR -->
-  <nav class="bg-white dark:bg-gray-800 shadow-md">
-    <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-      <div class="text-2xl font-bold">Hossein RJ</div>
-      <ul class="hidden md:flex space-x-6">
-        <li><a href="#intro" class="hover:text-blue-500">معرفی</a></li>
-        <li><a href="#resume" class="hover:text-blue-500">رزومه</a></li>
-        <li><a href="#skills" class="hover:text-blue-500">توانایی‌ها</a></li>
-        <li><a href="#projects" class="hover:text-blue-500">پروژه‌ها</a></li>
-        <li><a href="#contact" class="hover:text-blue-500">تماس</a></li>
-      </ul>
-      <div class="flex items-center">
-        <button class="lang-toggle px-3 py-1 bg-blue-500 text-white rounded">EN</button>
-        <button class="theme-toggle px-3 py-1 ml-2 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded">🌓</button>
-        <button class="md:hidden menu-toggle ml-4 text-2xl">☰</button>
-      </div>
-    </div>
-    <ul class="hidden mobile-menu flex-col bg-white dark:bg-gray-800 px-4 py-2 space-y-2 md:hidden">
-      <li><a href="#intro" class="block hover:text-blue-500">Introduction</a></li>
-      <li><a href="#resume" class="block hover:text-blue-500">Resume</a></li>
-      <li><a href="#skills" class="block hover:text-blue-500">Skills</a></li>
-      <li><a href="#projects" class="block hover:text-blue-500">Projects</a></li>
-      <li><a href="#contact" class="block hover:text-blue-500">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Language & Theme Controls -->
+  <div class="fixed top-4 right-4 flex space-x-2 z-50">
+    <button onclick="switchLang('en')" class="px-2 py-1 bg-white/10 rounded">EN</button>
+    <button onclick="switchLang('fa')" class="px-2 py-1 bg-white/10 rounded">FA</button>
+  </div>
+  <div class="fixed top-4 left-4 z-50">
+    <button onclick="document.documentElement.classList.toggle('dark')" class="px-2 py-1 bg-white/10 rounded">🌓</button>
+  </div>
 
-  <!-- INTRODUCTION -->
-  <section id="intro" class="bg-gray-100 dark:bg-gray-800 text-center py-12 px-4">
-    <h1 class="text-4xl font-bold mb-4">سلام، من حسین رجب‌لو هستم</h1>
-    <p class="text-lg max-w-2xl mx-auto">
-      مهندس مکانیک با تخصص در **CFD** و **هوش مصنوعی**. علاقه‌مند به حل مسائل پیچیده مهندسی با کدنویسی پایتون و یادگیری ماشین.
+  <!-- Hero -->
+  <section class="pt-24 pb-12 text-center px-4">
+    <h1 id="hero-title-en" class="text-4xl md:text-5xl font-bold">Hossein Rajabloo</h1>
+    <h1 id="hero-title-fa" class="hidden rtl text-4xl md:text-5xl font-bold">حسین رجب‌لو</h1>
+    <p id="hero-desc-en" class="text-gray-400 mt-4">Mechanical Engineer • AI & Fuel Cell Researcher • Python & Simulation Enthusiast</p>
+    <p id="hero-desc-fa" class="hidden rtl text-gray-400 mt-4">مهندس مکانیک • پژوهشگر هوش مصنوعی و پیل سوختی • علاقه‌مند به پایتون و شبیه‌سازی</p>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="max-w-4xl mx-auto px-4 py-12">
+    <h2 id="about-en" class="text-2xl font-semibold mb-4">About Me</h2>
+    <h2 id="about-fa" class="hidden rtl text-2xl font-semibold mb-4">درباره من</h2>
+    <p id="about-desc-en" class="text-gray-300 leading-relaxed">
+      B.Sc. in Mechanical Engineering from Mazandaran University of Science & Technology (2012–2017).  
+      ISI researcher with publications on fuel cell vehicle barriers (Civilica) and radiative cooling (Elsevier under review).  
+      Currently Vocational Automotive Instructor at Ministry of Education, Iran. Skilled in Python, SolidWorks, ANSYS, CFD, and ML.
+    </p>
+    <p id="about-desc-fa" class="hidden rtl text-gray-300 leading-relaxed">
+      کارشناسی مهندسی مکانیک از دانشگاه علوم و فنون مازندران (۹۵–۱۳۹۱).  
+      پژوهشگر ISI با مقاله درباره موانع توسعه خودروهای پیل سوختی (Civilica) و خنک‌کاری تابشی (Elsevier در دست داوری).  
+      اکنون مربی مکانیک خودرو در وزارت آموزش‌وپرورش ایران. مسلط به پایتون، سالیدورک، انسیس، CFD و یادگیری ماشین.
     </p>
   </section>
 
-  <!-- RESUME -->
-  <section id="resume" class="container mx-auto px-4 py-12">
-    <h2 class="text-3xl font-semibold mb-6 text-center">رزومه حرفه‌ای</h2>
-    <div class="space-y-4 max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
-      <p><strong>تحصیلات:</strong> کارشناسی مهندسی مکانیک، دانشگاه صنعتی مازندران (۱۳۹۲–۱۳۹۶)</p>
-      <p><strong>کارشناسی ارشد:</strong> گرایش مکانیک سیالات و انتقال حرارت، دانشگاه صنعت و معدن (۱۳۹۶–۱۳۹۸)</p>
-      <p><strong>تجربه کاری:</strong></p>
-      <ul class="list-disc list-inside">
-        <li>پروژه صنعتی CFD برای کاهش درگ در پروانه‌های توربین (شرکت انرژی سبز)</li>
-        <li>توسعه مدل پیش‌بینی مصرف سوخت با یادگیری ماشین (شرکت حمل‌ونقل پایدار)</li>
-        <li>مقاله‌های ISI در حوزه انتقال حرارت اجکتوری و kirigami نانو — نویسنده اول</li>
-      </ul>
-    </div>
+  <!-- Skills -->
+  <section id="skills" class="max-w-4xl mx-auto px-4 py-12">
+    <h2 id="skills-en" class="text-2xl font-semibold mb-4">Skills & Tools</h2>
+    <h2 id="skills-fa" class="hidden rtl text-2xl font-semibold mb-4">مهارت‌ها و ابزارها</h2>
+    <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-300">
+      <li>Python</li>
+      <li>Machine Learning</li>
+      <li>SolidWorks</li>
+      <li>ANSYS</li>
+      <li>CFD</li>
+      <li>Fuel Cell Tech</li>
+      <li>Teaching</li>
+      <li>Technical Writing</li>
+    </ul>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="bg-gray-50 dark:bg-gray-800 py-12">
-    <h2 class="text-3xl font-semibold mb-6 text-center">توانایی‌ها</h2>
-    <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-4 px-4">
-      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">Python</div>
-      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">OpenFOAM / CFD</div>
-      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">Machine Learning</div>
-      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">Data Visualization</div>
-      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">SolidWorks / CAD</div>
-      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">Git & GitHub</div>
-    </div>
+  <!-- Projects -->
+  <section id="projects" class="max-w-5xl mx-auto px-4 py-12">
+    <h2 id="projects-en" class="text-2xl font-semibold mb-6">🚀 Projects</h2>
+    <h2 id="projects-fa" class="hidden rtl text-2xl font-semibold mb-6">🚀 پروژه‌ها</h2>
+    <div id="project-container" class="grid md:grid-cols-3 gap-6"></div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="container mx-auto px-4 py-12">
-    <h2 class="text-3xl font-semibold mb-6 text-center">پروژه‌ها</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- پروژه 1 -->
-      <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-        <img src="https://via.placeholder.com/400x250" alt="CFD Simulation" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-bold mb-2">CFD Simulation</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-3">شبیه‌سازی جریان سیال با OpenFOAM برای بهینه‌سازی پروانه‌ها.</p>
-          <a href="#" class="text-blue-500 hover:underline">جزئیات بیشتر →</a>
-        </div>
-      </div>
-      <!-- پروژه 2 -->
-      <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-        <img src="https://via.placeholder.com/400x250" alt="AI Chatbot" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-bold mb-2">AI Chatbot</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-3">ربات گفت‌وگو با استفاده از GPT و پایتون برای پاسخ‌گویی خودکار.</p>
-          <a href="#" class="text-blue-500 hover:underline">جزئیات بیشتر →</a>
-        </div>
-      </div>
-      <!-- پروژه 3 -->
-      <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-        <img src="https://via.placeholder.com/400x250" alt="Data Visualizer" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-bold mb-2">Data Visualizer</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-3">ابزار تعاملی برای مصورسازی داده‌های علمی با Matplotlib.</p>
-          <a href="#" class="text-blue-500 hover:underline">جزئیات بیشتر →</a>
-        </div>
-      </div>
-    </div>
+  <!-- Resume Timeline -->
+  <section id="resume" class="max-w-4xl mx-auto px-4 py-12">
+    <h2 id="resume-en" class="text-2xl font-semibold mb-4">📅 Experience</h2>
+    <h2 id="resume-fa" class="hidden rtl text-2xl font-semibold mb-4">📅 سوابق</h2>
+    <ul class="border-l-2 border-blue-500 ml-4 space-y-4 text-gray-300">
+      <li><strong>2023–Present:</strong> Vocational Automotive Instructor, Ministry of Education</li>
+      <li><strong>2017–2019:</strong> HVAC Trainer, Iran Technical & Vocational Training Organization</li>
+      <li><strong>2012–2017:</strong> B.Sc. Mechanical Engineering, Mazandaran University</li>
+    </ul>
   </section>
 
-  <!-- CHAT DEMO -->
-  <section class="max-w-2xl mx-auto px-4 py-8 bg-white/5 rounded-xl">
-    <h3 class="text-lg font-semibold mb-4">💬 نمایش چت با AI</h3>
-    <div class="space-y-3">
-      <div class="bg-gray-800 p-3 rounded">👤 You: What is CFD?</div>
-      <div class="bg-gray-700 p-3 rounded">🤖 AI: CFD stands for Computational Fluid Dynamics...</div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="max-w-xl mx-auto px-4 py-10 text-center">
-    <h3 class="text-2xl font-semibold mb-4">📬 تماس با من</h3>
-    <form action="mailto:hosseinrj1994@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
-      <input type="text" name="name" placeholder="نام شما" class="w-full p-2 rounded bg-white/10 text-white">
-      <input type="email" name="email" placeholder="ایمیل شما" class="w-full p-2 rounded bg-white/10 text-white">
-      <textarea name="message" rows="4" placeholder="پیام شما" class="w-full p-2 rounded bg-white/10 text-white"></textarea>
-      <button type="submit" class="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded">ارسال</button>
+  <!-- Contact -->
+  <section id="contact" class="max-w-4xl mx-auto px-4 py-12 text-center">
+    <h2 id="contact-en" class="text-2xl font-semibold mb-4">📬 Contact Me</h2>
+    <h2 id="contact-fa" class="hidden rtl text-2xl font-semibold mb-4">📬 تماس</h2>
+    <form action="mailto:hosseinrj1994@gmail.com" method="POST" class="space-y-4">
+      <input type="text" name="name" placeholder="Your Name" class="w-full p-2 rounded bg-white/10 text-white"/>
+      <input type="email" name="email" placeholder="Your Email" class="w-full p-2 rounded bg-white/10 text-white"/>
+      <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-2 rounded bg-white/10 text-white"></textarea>
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded">Send Message</button>
     </form>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="text-center text-gray-500 py-6 text-sm">
-    <span>© ۲۰۲۵ حسین رجب‌لو. تمامی حقوق محفوظ است.</span>
+    <span id="footer-en">Made by Hossein Rajabloo | GitHub: @HowsseinRj</span>
+    <span id="footer-fa" class="hidden rtl">ساخته شده توسط حسین رجب‌لو | گیت‌هاب: @HowsseinRj</span>
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
-    // Dark/Light Toggle
-    document.querySelectorAll('.theme-toggle').forEach(btn =>
-      btn.addEventListener('click', () =>
-        document.documentElement.classList.toggle('dark')
-      )
-    );
-    // Language Toggle
-    document.querySelectorAll('.lang-toggle').forEach(btn =>
-      btn.addEventListener('click', () => {
-        const html = document.documentElement;
-        const fa = document.getElementById('fa-content');
-        const en = document.getElementById('en-content');
-        if (html.lang === 'fa') {
-          html.lang = 'en'; html.dir = 'ltr';
-          document.querySelectorAll('[dir="ltr"], [lang="en"]').forEach(el => el.classList.remove('hidden'));
-          document.querySelectorAll('[lang="fa"]').forEach(el => el.classList.add('hidden'));
-        } else {
-          html.lang = 'fa'; html.dir = 'rtl';
-          document.querySelectorAll('[lang="fa"]').forEach(el => el.classList.remove('hidden'));
-          document.querySelectorAll('[dir="ltr"], [lang="en"]').forEach(el => el.classList.add('hidden'));
-        }
-      })
-    );
-    // Mobile Menu Toggle
-    document.querySelectorAll('.menu-toggle').forEach(btn =>
-      btn.addEventListener('click', () =>
-        btn.closest('nav').querySelector('.mobile-menu').classList.toggle('hidden')
-      )
-    );
-  </script>
+    const projects = [
+      { title: "Engine Efficiency Plot", desc: "Mechanical efficiency vs load plotted using Python & Matplotlib." },
+      { title: "Fuel Efficiency Prediction", desc: "ML model predicts car MPG with regression & Random Forest." },
+      { title: "Pipe Heat Loss", desc: "Simulates conductive & convective heat loss in pipes." },
+      { title: "Radiative Cooling Film", desc: "Biomimetic cooling for PV modules (Elsevier under review)." },
+      { title: "Fuel Cell Vehicle Barriers", desc: "Analysis of barriers & strategies (Civilica published)." }
+    ];
 
+    const container = document.getElementById('project-container');
+    projects.forEach(p => {
+      const card = document.createElement('div');
+      card.className = "bg-white/5 p-4 rounded-xl shadow hover:shadow-xl transition";
+      card.innerHTML = `<h4 class='font-bold text-lg mb-2'>${p.title}</h4><p class='text-gray-300 text-sm'>${p.desc}</p>`;
+      container.appendChild(card);
+    });
+
+    function switchLang(lang) {
+      document.querySelectorAll('[id$="-en"]').forEach(el => el.classList.toggle('hidden', lang!=='en'));
+      document.querySelectorAll('[id$="-fa"]').forEach(el => el.classList.toggle('hidden', lang!=='fa'));
+      document.body.classList.toggle('rtl', lang==='fa');
+      document.documentElement.lang = lang;
+    }
+  </script>
 </body>
 </html>
