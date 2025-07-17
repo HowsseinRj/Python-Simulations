@@ -1,100 +1,133 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" id="html">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hossein Rajabloo | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            vazir: ['Vazirmatn', 'sans-serif'],
-            outfit: ['Outfit', 'sans-serif'],
-            sans: ['Outfit', 'Vazirmatn', 'sans-serif']
-          },
-          colors: { glass: 'rgba(255,255,255,0.05)' }
-        }
-      }
-    };
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet" />
   <style>
-    body { transition: .3s }
-    .rtl { direction: rtl }
-    .hidden { display: none }
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header, footer {
+      background-color: #111;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+    .project, .experience {
+      margin-bottom: 1.5rem;
+    }
+    .lang-switch {
+      cursor: pointer;
+      background: #444;
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+    }
+    .gallery img {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+    }
+    .socials a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: #333;
+    }
   </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans">
+<body>
+  <header>
+    <div><strong>Hossein Rajabloo</strong></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <span class="lang-switch" onclick="switchLang()">FA / EN</span>
+    </nav>
+  </header>
 
-  <!-- LANGUAGE & THEME CONTROLS -->
-  <div class="fixed top-4 right-4 flex space-x-2 z-50">
-    <button onclick="switchLang('en')" class="px-2 py-1 bg-blue-500 text-white rounded">EN</button>
-    <button onclick="switchLang('fa')" class="px-2 py-1 bg-blue-500 text-white rounded">FA</button>
-  </div>
-  <div class="fixed top-4 left-4 z-50">
-    <button onclick="document.documentElement.classList.toggle('dark')" class="px-2 py-1 bg-white/20 dark:bg-white/10 text-black dark:text-white rounded">🌓</button>
-  </div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm Hossein Rajabloo, a mechanical engineering student with a passion for innovative technology, web development, and AI. I build impactful digital experiences and love working on real-world problems.</p>
+  </section>
 
-  <!-- FA CONTENT -->
-  <div id="fa-content" class="hidden">
-    <section class="text-center py-12 px-4">
-      <h1 class="text-4xl font-bold mb-2">مهندس مکانیک & علاقه‌مند به AI</h1>
-      <p class="text-lg text-gray-600 dark:text-gray-300">پژوهشگر سلول سوختی • توسعه‌دهنده Python • مدرس فنی و حرفه‌ای</p>
-    </section>
-    <section class="max-w-5xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-semibold mb-6">🚀 پروژه‌ها</h2>
-      <div id="project-container-fa" class="grid md:grid-cols-3 gap-6"></div>
-    </section>
-  </div>
+  <section id="resume">
+    <h2>Resume</h2>
+    <ul>
+      <li><strong>Degree:</strong> BSc in Mechanical Engineering - [Your University]</li>
+      <li><strong>Skills:</strong> Python, HTML/CSS, GitHub, AI Prompting, CFD Simulation, Web Design</li>
+      <li><strong>Languages:</strong> English (Fluent), Persian (Native)</li>
+    </ul>
+  </section>
 
-  <!-- EN CONTENT -->
-  <div id="en-content">
-    <section class="text-center py-12 px-4">
-      <h1 class="text-4xl font-bold mb-2">Mechanical Engineer & AI Researcher</h1>
-      <p class="text-lg text-gray-600 dark:text-gray-300">Fuel Cell Technologies • Python & Simulation • Technical Instructor</p>
-    </section>
-    <section class="max-w-5xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-semibold mb-6">🚀 Projects</h2>
-      <div id="project-container-en" class="grid md:grid-cols-3 gap-6"></div>
-    </section>
-  </div>
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="project">
+      <strong>✔ Music Search Telegram Bot</strong>
+      <p>A Python-powered Telegram bot that fetches songs from platforms like Spotify, YouTube, and SoundCloud.</p>
+    </div>
+    <div class="project">
+      <strong>✔ CFD UAV Drag Reduction</strong>
+      <p>Simulated bio-inspired riblet surfaces to minimize drag in UAVs using ANSYS Fluent.</p>
+    </div>
+  </section>
 
-  <!-- SCRIPT -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="experience">
+      <strong>Freelancer on Ponisha</strong>
+      <p>Worked on several AI, scraping, and automation projects using only Android & Python.</p>
+    </div>
+    <div class="experience">
+      <strong>Personal Projects</strong>
+      <p>Built multiple bots, tools, and web templates as part of my self-learning journey.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact & Social</h2>
+    <p>You can reach out to me via:</p>
+    <div class="socials">
+      <a href="https://t.me/hossein_rj" target="_blank">Telegram</a>
+      <a href="https://github.com/hosseinrj" target="_blank">GitHub</a>
+      <a href="mailto:your.email@example.com">Email</a>
+      <a href="https://linkedin.com/in/hosseinrj">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hossein Rajabloo</p>
+  </footer>
+
   <script>
-    const projects_fa = [
-      { title: "نمودار راندمان موتور", desc: "راندمان مکانیکی برحسب بار با پایتون و Matplotlib" },
-      { title: "پیش‌بینی مصرف سوخت", desc: "مدل یادگیری ماشین برای پیش‌بینی MPG خودرو" },
-      { title: "تحلیل اتلاف حرارتی", desc: "شبیه‌سازی انتقال حرارت هدایتی و جابجایی در لوله‌ها" }
-    ];
-    const projects_en = [
-      { title: "Engine Efficiency Plot", desc: "Mechanical efficiency vs load plotted using Python & Matplotlib." },
-      { title: "Fuel Efficiency Prediction", desc: "ML model predicts car MPG with regression & Random Forest." },
-      { title: "Pipe Heat Loss", desc: "Simulates conductive & convective heat loss in pipes." }
-    ];
-    const langs = { en: projects_en, fa: projects_fa };
-    Object.keys(langs).forEach(lang => {
-      const container = document.getElementById(`project-container-${lang}`);
-      langs[lang].forEach(p => {
-        const card = document.createElement('div');
-        card.className = "bg-white/5 p-4 rounded-xl shadow hover:shadow-xl transition";
-        card.innerHTML = `<h4 class='font-bold text-lg mb-2'>${p.title}</h4><p class='text-gray-300 text-sm'>${p.desc}</p>`;
-        container.appendChild(card);
-      });
-    });
-
-    function switchLang(lang) {
-      document.getElementById('fa-content').classList.toggle('hidden', lang !== 'fa');
-      document.getElementById('en-content').classList.toggle('hidden', lang !== 'en');
-      document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+    function switchLang() {
+      const lang = document.documentElement.lang === 'en' ? 'fa' : 'en';
       document.documentElement.lang = lang;
-      document.body.classList.toggle('rtl', lang === 'fa');
+      document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+      alert('Language switched to ' + (lang === 'fa' ? 'فارسی' : 'English'));
     }
-
-    // Default Language: English
-    switchLang('en');
   </script>
 </body>
 </html>
