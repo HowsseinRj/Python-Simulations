@@ -4,9 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hossein Rajabloo | Portfolio</title>
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -14,14 +12,20 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Outfit','Vazirmatn','sans-serif'],
+            vazir: ['Vazirmatn', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+            sans: ['Outfit', 'Vazirmatn', 'sans-serif']
           },
           colors: { glass: 'rgba(255,255,255,0.05)' }
         }
       }
     };
   </script>
-  <style> body { transition: .3s } .rtl{direction:rtl} .hidden{display:none} </style>
+  <style>
+    body { transition: .3s }
+    .rtl { direction: rtl }
+    .hidden { display: none }
+  </style>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans">
 
@@ -31,180 +35,66 @@
     <button onclick="switchLang('fa')" class="px-2 py-1 bg-blue-500 text-white rounded">FA</button>
   </div>
   <div class="fixed top-4 left-4 z-50">
-    <button onclick="document.documentElement.classList.toggle('dark')" class="px-2 py-1 bg-white/10 rounded">🌓</button>
+    <button onclick="document.documentElement.classList.toggle('dark')" class="px-2 py-1 bg-white/20 dark:bg-white/10 text-black dark:text-white rounded">🌓</button>
   </div>
 
-  <!-- Farsi Content -->
-  <div id="fa-content">
-    <!-- NAVBAR -->
-    <nav class="bg-white dark:bg-gray-800 shadow">
-      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div class="text-2xl font-bold">حسین رجب‌لو</div>
-        <ul class="hidden md:flex space-x-6">
-          <li><a href="#about" class="hover:text-blue-500">درباره من</a></li>
-          <li><a href="#projects" class="hover:text-blue-500">پروژه‌ها</a></li>
-          <li><a href="#resume" class="hover:text-blue-500">رزومه</a></li>
-          <li><a href="#contact" class="hover:text-blue-500">تماس</a></li>
-        </ul>
-        <button class="md:hidden menu-toggle text-2xl">☰</button>
-      </div>
-      <ul class="hidden mobile-menu flex-col bg-white dark:bg-gray-800 px-4 py-2 md:hidden">
-        <li><a href="#about" class="block py-2">درباره من</a></li>
-        <li><a href="#projects" class="block py-2">پروژه‌ها</a></li>
-        <li><a href="#resume" class="block py-2">رزومه</a></li>
-        <li><a href="#contact" class="block py-2">تماس</a></li>
-      </ul>
-    </nav>
-
-    <!-- HERO -->
-    <section class="bg-gray-100 dark:bg-gray-800 text-center py-12 px-4">
+  <!-- FA CONTENT -->
+  <div id="fa-content" class="hidden">
+    <section class="text-center py-12 px-4">
       <h1 class="text-4xl font-bold mb-2">مهندس مکانیک & علاقه‌مند به AI</h1>
       <p class="text-lg text-gray-600 dark:text-gray-300">پژوهشگر سلول سوختی • توسعه‌دهنده Python • مدرس فنی و حرفه‌ای</p>
     </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="max-w-4xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-semibold mb-4">درباره من</h2>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-        فارغ‌التحصیل مهندسی مکانیک از دانشکده علوم و فنون مازندران (۱۳۹۱–۱۳۹۵)،  
-        پژوهشگر ISI با مقاله در موانع فناوری خودروهای پیل سوختی (Civilica منتشر شده)  
-        و فیلم خنک‌کننده تابشی (Elsevier در حال داوری).  
-        اکنون مربی مکانیک خودرو در وزارت آموزش‌و‌پرورش.  
-        مسلط به Python، SolidWorks، ANSYS، CFD و یادگیری ماشین.
-      </p>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="max-w-5xl mx-auto px-4 py-12">
+    <section class="max-w-5xl mx-auto px-4 py-12">
       <h2 class="text-2xl font-semibold mb-6">🚀 پروژه‌ها</h2>
       <div id="project-container-fa" class="grid md:grid-cols-3 gap-6"></div>
     </section>
-
-    <!-- RESUME TIMELINE -->
-    <section id="resume" class="max-w-4xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-semibold mb-4">📅 سوابق</h2>
-      <ul class="border-l-2 border-blue-500 pl-4 space-y-4 text-gray-700 dark:text-gray-300">
-        <li><strong>۱۴۰۲–اکنون:</strong> مربی مکانیک خودرو، وزارت آموزش‌وپرورش</li>
-        <li><strong>۱۳۹۶–۱۳۹۸:</strong> مربی تاسیسات، سازمان فنی‌وحرفه‌ای</li>
-        <li><strong>۱۳۹۱–۱۳۹۵:</strong> کارشناسی مهندسی مکانیک، دانشگاه مازندران</li>
-      </ul>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="max-w-4xl mx-auto px-4 py-12 text-center">
-      <h2 class="text-2xl font-semibold mb-4">📬 تماس با من</h2>
-      <form action="mailto:hosseinrj1994@gmail.com" method="POST" class="space-y-4">
-        <input type="text" name="name" placeholder="نام شما" class="w-full p-2 rounded bg-white/10 text-gray-800" required>
-        <input type="email" name="email" placeholder="ایمیل شما" class="w-full p-2 rounded bg-white/10 text-gray-800" required>
-        <textarea name="message" rows="4" placeholder="پیام شما..." class="w-full p-2 rounded bg-white/10 text-gray-800" required></textarea>
-        <button type="submit" class="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded text-white">ارسال پیام</button>
-      </form>
-    </section>
   </div>
 
-  <!-- English Content -->
-  <div id="en-content" class="hidden">
-    <!-- NAVBAR -->
-    <nav class="bg-white dark:bg-gray-800 shadow">
-      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div class="text-2xl font-bold">Hossein Rajabloo</div>
-        <ul class="hidden md:flex space-x-6">
-          <li><a href="#about" class="hover:text-blue-500">About</a></li>
-          <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
-          <li><a href="#resume" class="hover:text-blue-500">Resume</a></li>
-          <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
-        </ul>
-        <button class="md:hidden menu-toggle text-2xl">☰</button>
-      </div>
-      <ul class="hidden mobile-menu flex-col bg-white dark:bg-gray-800 px-4 py-2 md:hidden">
-        <li><a href="#about" class="block py-2">About</a></li>
-        <li><a href="#projects" class="block py-2">Projects</a></li>
-        <li><a href="#resume" class="block py-2">Resume</a></li>
-        <li><a href="#contact" class="block py-2">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- HERO -->
-    <section class="bg-gray-100 dark:bg-gray-800 text-center py-12 px-4">
+  <!-- EN CONTENT -->
+  <div id="en-content">
+    <section class="text-center py-12 px-4">
       <h1 class="text-4xl font-bold mb-2">Mechanical Engineer & AI Researcher</h1>
       <p class="text-lg text-gray-600 dark:text-gray-300">Fuel Cell Technologies • Python & Simulation • Technical Instructor</p>
     </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="max-w-4xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-        B.Sc. in Mechanical Engineering from Mazandaran University of Science & Technology (2012–2017).  
-        ISI researcher with publications in Civilica (“Fuel Cell Vehicle Barriers”) and Elsevier under review (“Radiative Cooling Film”).  
-        Currently Vocational Automotive Instructor at the Ministry of Education, Iran.  
-        Skilled in Python, SolidWorks, ANSYS, CFD & Machine Learning.
-      </p>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="max-w-5xl mx-auto px-4 py-12">
+    <section class="max-w-5xl mx-auto px-4 py-12">
       <h2 class="text-2xl font-semibold mb-6">🚀 Projects</h2>
       <div id="project-container-en" class="grid md:grid-cols-3 gap-6"></div>
-    </section>
-
-    <!-- RESUME TIMELINE -->
-    <section id="resume" class="max-w-4xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-semibold mb-4">📅 Experience</h2>
-      <ul class="border-l-2 border-blue-500 pl-4 space-y-4 text-gray-700 dark:text-gray-300">
-        <li><strong>2023–Present:</strong> Vocational Automotive Instructor, Ministry of Education</li>
-        <li><strong>2017–2019:</strong> HVAC Trainer, Iran Technical & Vocational Training Organization</li>
-        <li><strong>2012–2017:</strong> B.Sc. Mechanical Engineering, Mazandaran University</li>
-      </ul>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="max-w-4xl mx-auto px-4 py-12 text-center">
-      <h2 class="text-2xl font-semibold mb-4">📬 Contact Me</h2>
-      <form action="mailto:hosseinrj1994@gmail.com" method="POST" class="space-y-4">
-        <input type="text" name="name" placeholder="Your Name" class="w-full p-2 rounded bg-white/10 text-white" required>
-        <input type="email" name="email" placeholder="Your Email" class="w-full p-2 rounded bg-white/10 text-white" required>
-        <textarea name="message" rows="4" placeholder="Your Message..." class="w-full p-2 rounded bg-white/10 text-white" required></textarea>
-        <button type="submit" class="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded text-white">Send Message</button>
-      </form>
     </section>
   </div>
 
   <!-- SCRIPT -->
   <script>
-    // Projects data
-    const projects = [
+    const projects_fa = [
+      { title: "نمودار راندمان موتور", desc: "راندمان مکانیکی برحسب بار با پایتون و Matplotlib" },
+      { title: "پیش‌بینی مصرف سوخت", desc: "مدل یادگیری ماشین برای پیش‌بینی MPG خودرو" },
+      { title: "تحلیل اتلاف حرارتی", desc: "شبیه‌سازی انتقال حرارت هدایتی و جابجایی در لوله‌ها" }
+    ];
+    const projects_en = [
       { title: "Engine Efficiency Plot", desc: "Mechanical efficiency vs load plotted using Python & Matplotlib." },
       { title: "Fuel Efficiency Prediction", desc: "ML model predicts car MPG with regression & Random Forest." },
-      { title: "Pipe Heat Loss", desc: "Simulates conductive & convective heat loss in pipes." },
-      { title: "Radiative Cooling Film", desc: "Biomimetic cooling for PV modules (Elsevier under review)." },
-      { title: "Fuel Cell Vehicle Barriers", desc: "Analysis of barriers & strategies (Civilica published)." }
+      { title: "Pipe Heat Loss", desc: "Simulates conductive & convective heat loss in pipes." }
     ];
-
-    // Render projects for both languages
-    ['en','fa'].forEach(lang=>{
-      const container=document.getElementById(`project-container-${lang}`);
-      projects.forEach(p=>{
-        const card=document.createElement('div');
-        card.className="bg-white/5 p-4 rounded-xl shadow hover:shadow-xl transition";
-        card.innerHTML=`<h4 class='font-bold text-lg mb-2'>${p.title}</h4><p class='text-gray-300 text-sm'>${p.desc}</p>`;
+    const langs = { en: projects_en, fa: projects_fa };
+    Object.keys(langs).forEach(lang => {
+      const container = document.getElementById(`project-container-${lang}`);
+      langs[lang].forEach(p => {
+        const card = document.createElement('div');
+        card.className = "bg-white/5 p-4 rounded-xl shadow hover:shadow-xl transition";
+        card.innerHTML = `<h4 class='font-bold text-lg mb-2'>${p.title}</h4><p class='text-gray-300 text-sm'>${p.desc}</p>`;
         container.appendChild(card);
       });
     });
 
-    // Language switch
-    function switchLang(lang){
-      document.getElementById('fa-content').classList.toggle('hidden', lang!=='fa');
-      document.getElementById('en-content').classList.toggle('hidden', lang!=='en');
-      document.documentElement.dir = lang==='fa'?'rtl':'ltr';
+    function switchLang(lang) {
+      document.getElementById('fa-content').classList.toggle('hidden', lang !== 'fa');
+      document.getElementById('en-content').classList.toggle('hidden', lang !== 'en');
+      document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
       document.documentElement.lang = lang;
-      document.body.classList.toggle('rtl', lang==='fa');
+      document.body.classList.toggle('rtl', lang === 'fa');
     }
-    // Mobile menu
-    document.querySelectorAll('.menu-toggle').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        btn.closest('nav').querySelector('.mobile-menu').classList.toggle('hidden');
-      });
-    });
+
+    // Default Language: English
+    switchLang('en');
   </script>
 </body>
 </html>
