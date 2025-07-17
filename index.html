@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فروشگاه مشابه Apple</title>
+  <title>Hossein RJ | پرتفولیو و رزومه</title>
+  <meta name="description" content="پرتفولیوی حسین رجب‌لو: مهندس مکانیک، متخصص CFD و هوش مصنوعی با چندین پروژه علمی و صنعتی.">
   <!-- فونت فارسی وزیر متن -->
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -19,187 +20,160 @@
   </style>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-  <!-- محتوای فارسی -->
-  <div id="fa-content">
-    <!-- ناوبری -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md">
-      <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-        <div class="text-2xl font-bold">اپل استور</div>
-        <ul class="hidden md:flex space-x-6">
-          <li><a href="#" class="hover:text-blue-500">محصولات</a></li>
-          <li><a href="#" class="hover:text-blue-500">جدیدترین‌ها</a></li>
-          <li><a href="#" class="hover:text-blue-500">درباره ما</a></li>
-          <li><a href="#" class="hover:text-blue-500">تماس</a></li>
-        </ul>
-        <div class="flex items-center">
-          <button class="lang-toggle px-3 py-1 bg-blue-500 text-white rounded">EN</button>
-          <button class="theme-toggle px-3 py-1 ml-2 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded">🌓</button>
-          <button class="md:hidden menu-toggle ml-4 text-2xl">☰</button>
+
+  <!-- NAVBAR -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md">
+    <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+      <div class="text-2xl font-bold">Hossein RJ</div>
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="#intro" class="hover:text-blue-500">معرفی</a></li>
+        <li><a href="#resume" class="hover:text-blue-500">رزومه</a></li>
+        <li><a href="#skills" class="hover:text-blue-500">توانایی‌ها</a></li>
+        <li><a href="#projects" class="hover:text-blue-500">پروژه‌ها</a></li>
+        <li><a href="#contact" class="hover:text-blue-500">تماس</a></li>
+      </ul>
+      <div class="flex items-center">
+        <button class="lang-toggle px-3 py-1 bg-blue-500 text-white rounded">EN</button>
+        <button class="theme-toggle px-3 py-1 ml-2 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded">🌓</button>
+        <button class="md:hidden menu-toggle ml-4 text-2xl">☰</button>
+      </div>
+    </div>
+    <ul class="hidden mobile-menu flex-col bg-white dark:bg-gray-800 px-4 py-2 space-y-2 md:hidden">
+      <li><a href="#intro" class="block hover:text-blue-500">Introduction</a></li>
+      <li><a href="#resume" class="block hover:text-blue-500">Resume</a></li>
+      <li><a href="#skills" class="block hover:text-blue-500">Skills</a></li>
+      <li><a href="#projects" class="block hover:text-blue-500">Projects</a></li>
+      <li><a href="#contact" class="block hover:text-blue-500">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- INTRODUCTION -->
+  <section id="intro" class="bg-gray-100 dark:bg-gray-800 text-center py-12 px-4">
+    <h1 class="text-4xl font-bold mb-4">سلام، من حسین رجب‌لو هستم</h1>
+    <p class="text-lg max-w-2xl mx-auto">
+      مهندس مکانیک با تخصص در **CFD** و **هوش مصنوعی**. علاقه‌مند به حل مسائل پیچیده مهندسی با کدنویسی پایتون و یادگیری ماشین.
+    </p>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume" class="container mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold mb-6 text-center">رزومه حرفه‌ای</h2>
+    <div class="space-y-4 max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
+      <p><strong>تحصیلات:</strong> کارشناسی مهندسی مکانیک، دانشگاه صنعتی مازندران (۱۳۹۲–۱۳۹۶)</p>
+      <p><strong>کارشناسی ارشد:</strong> گرایش مکانیک سیالات و انتقال حرارت، دانشگاه صنعت و معدن (۱۳۹۶–۱۳۹۸)</p>
+      <p><strong>تجربه کاری:</strong></p>
+      <ul class="list-disc list-inside">
+        <li>پروژه صنعتی CFD برای کاهش درگ در پروانه‌های توربین (شرکت انرژی سبز)</li>
+        <li>توسعه مدل پیش‌بینی مصرف سوخت با یادگیری ماشین (شرکت حمل‌ونقل پایدار)</li>
+        <li>مقاله‌های ISI در حوزه انتقال حرارت اجکتوری و kirigami نانو — نویسنده اول</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="bg-gray-50 dark:bg-gray-800 py-12">
+    <h2 class="text-3xl font-semibold mb-6 text-center">توانایی‌ها</h2>
+    <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-4 px-4">
+      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">Python</div>
+      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">OpenFOAM / CFD</div>
+      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">Machine Learning</div>
+      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">Data Visualization</div>
+      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">SolidWorks / CAD</div>
+      <div class="bg-white dark:bg-gray-700 p-4 rounded shadow">Git & GitHub</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="container mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold mb-6 text-center">پروژه‌ها</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- پروژه 1 -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+        <img src="https://via.placeholder.com/400x250" alt="CFD Simulation" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">CFD Simulation</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-3">شبیه‌سازی جریان سیال با OpenFOAM برای بهینه‌سازی پروانه‌ها.</p>
+          <a href="#" class="text-blue-500 hover:underline">جزئیات بیشتر →</a>
         </div>
       </div>
-      <!-- منوی موبایل -->
-      <ul class="hidden mobile-menu flex-col bg-white dark:bg-gray-800 px-4 py-2 space-y-2 md:hidden">
-        <li><a href="#" class="block hover:text-blue-500">محصولات</a></li>
-        <li><a href="#" class="block hover:text-blue-500">جدیدترین‌ها</a></li>
-        <li><a href="#" class="block hover:text-blue-500">درباره ما</a></li>
-        <li><a href="#" class="block hover:text-blue-500">تماس</a></li>
-      </ul>
-    </nav>
-    <!-- معرفی -->
-    <section class="bg-gray-100 dark:bg-gray-800 text-center py-12">
-      <h1 class="text-4xl font-bold mb-4">فروشگاه محصولات اپل</h1>
-      <p class="text-lg">به فروشگاه رسمی اپل خوش آمدید. محصولات ما را بررسی کنید!</p>
-    </section>
-    <!-- اصلی (کارت محصولات + سایدبار) -->
-    <section class="container mx-auto mt-8 px-4 md:flex">
-      <!-- سایدبار دسته‌بندی -->
-      <aside class="w-full md:w-1/4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg mb-6 md:mb-0">
-        <h2 class="font-semibold mb-4">دسته‌بندی‌ها</h2>
-        <ul>
-          <li><a href="#" class="block py-2 hover:underline">گوشی</a></li>
-          <li><a href="#" class="block py-2 hover:underline">تبلت</a></li>
-          <li><a href="#" class="block py-2 hover:underline">لپ‌تاپ</a></li>
-          <li><a href="#" class="block py-2 hover:underline">ساعت</a></li>
-        </ul>
-      </aside>
-      <!-- کارت‌های محصولات -->
-      <main class="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- کارت 1 -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-          <img src="https://via.placeholder.com/400" alt="محصول 1" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">محصول ۱</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">توضیحات کوتاه محصول شماره یک...</p>
-            <span class="text-lg font-semibold">قیمت: ۱۰۰۰ تومان</span>
-          </div>
-        </div>
-        <!-- کارت 2 -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-          <img src="https://via.placeholder.com/400" alt="محصول 2" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">محصول ۲</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">توضیحات کوتاه محصول شماره دو...</p>
-            <span class="text-lg font-semibold">قیمت: ۲۰۰۰ تومان</span>
-          </div>
-        </div>
-        <!-- کارت 3 -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-          <img src="https://via.placeholder.com/400" alt="محصول 3" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">محصول ۳</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">توضیحات کوتاه محصول شماره سه...</p>
-            <span class="text-lg font-semibold">قیمت: ۱۵۰۰ تومان</span>
-          </div>
-        </div>
-        <!-- می‌توانید کارت‌های بیشتری اضافه کنید -->
-      </main>
-    </section>
-  </div>
-  <!-- محتوای انگلیسی -->
-  <div id="en-content" class="hidden">
-    <!-- Navbar in English -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md">
-      <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-        <div class="text-2xl font-bold">Apple Store</div>
-        <ul class="hidden md:flex space-x-6">
-          <li><a href="#" class="hover:text-blue-500">Products</a></li>
-          <li><a href="#" class="hover:text-blue-500">New Arrivals</a></li>
-          <li><a href="#" class="hover:text-blue-500">About Us</a></li>
-          <li><a href="#" class="hover:text-blue-500">Contact</a></li>
-        </ul>
-        <div class="flex items-center">
-          <button class="lang-toggle px-3 py-1 bg-blue-500 text-white rounded">FA</button>
-          <button class="theme-toggle px-3 py-1 ml-2 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded">🌓</button>
-          <button class="md:hidden menu-toggle ml-4 text-2xl">☰</button>
+      <!-- پروژه 2 -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+        <img src="https://via.placeholder.com/400x250" alt="AI Chatbot" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">AI Chatbot</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-3">ربات گفت‌وگو با استفاده از GPT و پایتون برای پاسخ‌گویی خودکار.</p>
+          <a href="#" class="text-blue-500 hover:underline">جزئیات بیشتر →</a>
         </div>
       </div>
-      <ul class="hidden mobile-menu flex-col bg-white dark:bg-gray-800 px-4 py-2 space-y-2 md:hidden">
-        <li><a href="#" class="block hover:text-blue-500">Products</a></li>
-        <li><a href="#" class="block hover:text-blue-500">New Arrivals</a></li>
-        <li><a href="#" class="block hover:text-blue-500">About Us</a></li>
-        <li><a href="#" class="block hover:text-blue-500">Contact</a></li>
-      </ul>
-    </nav>
-    <!-- Introduction -->
-    <section class="bg-gray-100 dark:bg-gray-800 text-center py-12">
-      <h1 class="text-4xl font-bold mb-4">Apple Product Store</h1>
-      <p class="text-lg">Welcome to the official Apple store. Check out our products!</p>
-    </section>
-    <!-- Main (Products + Sidebar) -->
-    <section class="container mx-auto mt-8 px-4 md:flex">
-      <aside class="w-full md:w-1/4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg mb-6 md:mb-0">
-        <h2 class="font-semibold mb-4">Categories</h2>
-        <ul>
-          <li><a href="#" class="block py-2 hover:underline">Phone</a></li>
-          <li><a href="#" class="block py-2 hover:underline">Tablet</a></li>
-          <li><a href="#" class="block py-2 hover:underline">Laptop</a></li>
-          <li><a href="#" class="block py-2 hover:underline">Watch</a></li>
-        </ul>
-      </aside>
-      <main class="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-          <img src="https://via.placeholder.com/400" alt="Product 1" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">Product 1</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Short description of product one...</p>
-            <span class="text-lg font-semibold">$1000</span>
-          </div>
+      <!-- پروژه 3 -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+        <img src="https://via.placeholder.com/400x250" alt="Data Visualizer" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Data Visualizer</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-3">ابزار تعاملی برای مصورسازی داده‌های علمی با Matplotlib.</p>
+          <a href="#" class="text-blue-500 hover:underline">جزئیات بیشتر →</a>
         </div>
-        <!-- Card 2 -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-          <img src="https://via.placeholder.com/400" alt="Product 2" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">Product 2</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Short description of product two...</p>
-            <span class="text-lg font-semibold">$2000</span>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-          <img src="https://via.placeholder.com/400" alt="Product 3" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-bold mb-2">Product 3</h3>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">Short description of product three...</p>
-            <span class="text-lg font-semibold">$1500</span>
-          </div>
-        </div>
-      </main>
-    </section>
-  </div>
-  <!-- JavaScript for toggles -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAT DEMO -->
+  <section class="max-w-2xl mx-auto px-4 py-8 bg-white/5 rounded-xl">
+    <h3 class="text-lg font-semibold mb-4">💬 نمایش چت با AI</h3>
+    <div class="space-y-3">
+      <div class="bg-gray-800 p-3 rounded">👤 You: What is CFD?</div>
+      <div class="bg-gray-700 p-3 rounded">🤖 AI: CFD stands for Computational Fluid Dynamics...</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-xl mx-auto px-4 py-10 text-center">
+    <h3 class="text-2xl font-semibold mb-4">📬 تماس با من</h3>
+    <form action="mailto:hosseinrj1994@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
+      <input type="text" name="name" placeholder="نام شما" class="w-full p-2 rounded bg-white/10 text-white">
+      <input type="email" name="email" placeholder="ایمیل شما" class="w-full p-2 rounded bg-white/10 text-white">
+      <textarea name="message" rows="4" placeholder="پیام شما" class="w-full p-2 rounded bg-white/10 text-white"></textarea>
+      <button type="submit" class="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded">ارسال</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-gray-500 py-6 text-sm">
+    <span>© ۲۰۲۵ حسین رجب‌لو. تمامی حقوق محفوظ است.</span>
+  </footer>
+
+  <!-- SCRIPTS -->
   <script>
-    document.querySelectorAll('.theme-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-      });
-    });
-    document.querySelectorAll('.lang-toggle').forEach(btn => {
+    // Dark/Light Toggle
+    document.querySelectorAll('.theme-toggle').forEach(btn =>
+      btn.addEventListener('click', () =>
+        document.documentElement.classList.toggle('dark')
+      )
+    );
+    // Language Toggle
+    document.querySelectorAll('.lang-toggle').forEach(btn =>
       btn.addEventListener('click', () => {
         const html = document.documentElement;
-        const faContent = document.getElementById('fa-content');
-        const enContent = document.getElementById('en-content');
-        if (faContent.classList.contains('hidden')) {
-          // Switch to Persian
-          enContent.classList.add('hidden');
-          faContent.classList.remove('hidden');
-          html.dir = 'rtl';
-          html.lang = 'fa';
+        const fa = document.getElementById('fa-content');
+        const en = document.getElementById('en-content');
+        if (html.lang === 'fa') {
+          html.lang = 'en'; html.dir = 'ltr';
+          document.querySelectorAll('[dir="ltr"], [lang="en"]').forEach(el => el.classList.remove('hidden'));
+          document.querySelectorAll('[lang="fa"]').forEach(el => el.classList.add('hidden'));
         } else {
-          // Switch to English
-          faContent.classList.add('hidden');
-          enContent.classList.remove('hidden');
-          html.dir = 'ltr';
-          html.lang = 'en';
+          html.lang = 'fa'; html.dir = 'rtl';
+          document.querySelectorAll('[lang="fa"]').forEach(el => el.classList.remove('hidden'));
+          document.querySelectorAll('[dir="ltr"], [lang="en"]').forEach(el => el.classList.add('hidden'));
         }
-      });
-    });
-    document.querySelectorAll('.menu-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const parentNav = btn.closest('nav');
-        parentNav.querySelector('.mobile-menu').classList.toggle('hidden');
-      });
-    });
+      })
+    );
+    // Mobile Menu Toggle
+    document.querySelectorAll('.menu-toggle').forEach(btn =>
+      btn.addEventListener('click', () =>
+        btn.closest('nav').querySelector('.mobile-menu').classList.toggle('hidden')
+      )
+    );
   </script>
+
 </body>
 </html>
